@@ -1,0 +1,486 @@
+function eventMainMap()
+tfm.exec.disableAutoShaman(true)
+tfm.exec.disableAllShamanSkills(true)
+tfm.exec.disableAfkDeath(true)
+tfm.exec.disableAutoNewGame(true)
+tfm.exec.disableAutoTimeLeft(true)
+tfm.exec.disablePhysicalConsumables(true)
+tfm.exec.disableDebugCommand(true)
+tfm.exec.disableMortCommand(true)
+tfm.exec.disableAutoScore(true)
+tfm.exec.disablePrespawnPreview(true)
+
+tfm.exec.newGame([[<C><P L="1600" H="800" F="0" Ca="" shaman_tools="17" MEDATA=";;;;-0;0:::1-"/><Z><S><S T="6" X="803" Y="780" L="1200" H="40" P="0,0,0.3,0.2,0,0,0,0" lua="0" nosync=""/></S><D><DS X="350" Y="745"/></D><O/><L/></Z></C>]])
+tfm.exec.setGameTime(0)
+ui.addTextArea(0,"<font size='1000' color = '#ffffff'><a href='event:Click'> </a>",nil,780,710,35,30, 0x111111, 0x000000,0)
+Bon = tfm.exec.addImage("1875b7f1e29.png","_1",785,720)
+end
+eventMainMap()
+
+
+OriginalScore = {}
+SBCD = {}
+RoomName = "Don't Press The Button!"
+REN1 = "Don't Press The Button!  <v>Acid Rain "
+REN2 = "Don't Press The Button!  <v>Everyone is a Shaman!"
+REN3 = "Don't Press The Button!  <v>Lucky Floors"
+REN4 = "Don't Press The Button!  <v>Vampire!"
+REN5 = "Don't Press The Button!  <v>Sheep :D"
+REN6 = "Don't Press The Button!  <v>Sheeps XD"
+REN7 = "Don't Press The Button!  <v>Parkour"
+REN8 = "Don't Press The Button!  <v>Don't fall"
+REN9 = "Don't Press The Button!  <v>Ice-Mice"
+REN10 = "Don't Press The<r> BUTTON"
+REN11 = "Don't Press The Button!  <v>Don't Move!"
+REN12 = "Don't Press The Button!  <v>Fight"
+REN13 = "Don't Press The Button!  <v>Look out!!"
+REN14 = "Don't Press The Button!  <v>V-S"
+
+MREN1 = "<v>It's raining Acid, RUN!!"
+MREN2 = "<v>Everyone is a Shaman!"
+MREN3 = "<v>Stand in one of the Tiles"
+MREN4 = "<v>Vampire!"
+MREN5 = "<v>Sheep :D"
+MREN6 = "<v>Sheeps XD"
+MREN7 = "<v>Win this parkour to be special"
+MREN8 = "<v>Don't fall"
+MREN9 = "<v>M-ICE Cubes"
+MREN10 = "<v>Don't Press The<r> BUTTON"
+MREN11 = "<r>Don't Move!"
+MREN12 = "<v>Cunnon Balls Fight"
+MREN13 = "<v>Look out!!"
+MREN14 = "<v>Tug of War"
+
+function eventResetVariables() --R-V-0
+--Variables
+Mice = 0
+Alives = 0
+--
+Randomevent = 0
+CTime = 0
+Clicked = 0
+T1 = 0
+--
+AcidRain = 0
+RainSpeed = 0
+RainBlockID = 0
+RealGround = 0
+GroundsTime = 0
+PNTO = 0
+PNT = 1
+end --R-V-0
+eventResetVariables()
+
+ui.addTextArea(0,"<font size='1000' color = '#ffffff'><a href='event:Click'> </a>",nil,780,710,35,30, 0x111111, 0x000000,0)
+
+function eventNewPlayer(name)
+OriginalScore[name] = 0
+SBCD[name] = 0
+end
+for name in next, tfm.get.room.playerList do
+eventNewPlayer(name)
+end
+
+function eventContactListener(name, groundId, contactInfos) -- C-L-0
+if groundId == 3 and Randomevent == 7 then
+tfm.exec.addImage("17b9dfe5483.png", "$"..name, -22, -100, nil)
+OriginalScore[name] = OriginalScore[name] + 5
+tfm.exec.setPlayerScore(name, OriginalScore[name])
+tfm.exec.movePlayer(name, 800, 770)
+end
+end -- C-L-0
+
+function StartBossFight() --B-F-S
+tfm.exec.disableAutoShaman(false)
+tfm.exec.disableAfkDeath(false)
+tfm.exec.disableAutoNewGame(true)
+tfm.exec.disableAutoTimeLeft(true)
+tfm.exec.disablePhysicalConsumables(true)
+tfm.exec.disableDebugCommand(true)
+tfm.exec.disableMortCommand(true)
+tfm.exec.disableAutoScore(true)
+tfm.exec.disablePrespawnPreview(true)
+
+tfm.exec.newGame([[<C><P D="x_bouboum/x_fond/x_f4.jpg,0,0" G="0,4" DS="m;60,230,740,230" Ca="" MEDATA=";;;;-0;0:::1-"/><Z><S><S T="12" X="270" Y="360" L="100" H="30" P="0,0,0.3,0.2,0,0,0,0" o="8B8B8B" c="3" N=""/><S T="12" X="530" Y="360" L="100" H="30" P="0,0,0.3,0.2,0,0,0,0" o="8B8B8B" c="3" N=""/><S T="12" X="200" Y="150" L="100" H="30" P="0,0,0.3,0.2,0,0,0,0" o="8B8B8B" c="3" N=""/><S T="12" X="600" Y="150" L="100" H="30" P="0,0,0.3,0.2,0,0,0,0" o="8B8B8B" c="3" N=""/><S T="12" X="60" Y="260" L="100" H="30" P="0,0,0.3,0.2,0,0,0,0" o="8B8B8B" c="3" N=""/><S T="12" X="740" Y="260" L="100" H="30" P="0,0,0.3,0.2,0,0,0,0" o="8B8B8B" c="3" N=""/><S T="12" X="270" Y="360" L="95" H="25" P="0,0,0.3,0.2,0,0,0,0" o="BFBFBF" c="3" N=""/><S T="12" X="530" Y="360" L="95" H="25" P="0,0,0.3,0.2,0,0,0,0" o="BFBFBF" c="3" N=""/><S T="12" X="200" Y="150" L="95" H="25" P="0,0,0.3,0.2,0,0,0,0" o="BFBFBF" c="3" N=""/><S T="12" X="600" Y="150" L="95" H="25" P="0,0,0.3,0.2,0,0,0,0" o="BFBFBF" c="3" N=""/><S T="12" X="60" Y="260" L="95" H="25" P="0,0,0.3,0.2,0,0,0,0" o="BFBFBF" c="3" N=""/><S T="12" X="740" Y="260" L="95" H="25" P="0,0,0.3,0.2,0,0,0,0" o="BFBFBF" c="3" N=""/><S T="12" X="5" Y="25" L="10" H="10" P="0,0,0.3,0.2,0,0,0,0" o="324650" c="4" lua="-1" nosync="" i="0,0,18775c354af.png"/><S T="12" X="400" Y="-375" L="100" H="20" P="0,0,0.3,0.2,0,0,0,0" o="324650"/><S T="12" X="425" Y="-410" L="100" H="20" P="0,0,0.3,0.2,50,0,0,0" o="324650"/><S T="12" X="375" Y="-410" L="100" H="20" P="0,0,0.3,0.2,-50,0,0,0" o="324650"/></S><D><DC X="400" Y="-400"/></D><O/><L/></Z></C>]])
+end --B-F-S
+
+function eventNewGame() --NewGame
+if ClickedTimes == -1 then
+tfm.exec.setGameTime(600)
+for name in next, tfm.get.room.playerList do
+if tfm.get.room.playerList[name].isShaman == true then
+Boss = name
+tfm.exec.setShaman(name, false)
+end
+end
+end
+end --NewGame
+
+function eventTextAreaCallback(id,name,event) -- event-0
+if event == "FakeClick" then
+tfm.exec.killPlayer(name)
+end
+if event == "Click" and CTime <= 0 and Clicked == 0 and  tfm.get.room.playerList[name].x < 850 and tfm.get.room.playerList[name].x > 750 then -- Click
+OriginalScore[name] = OriginalScore[name] + 3
+tfm.exec.setPlayerScore(name, OriginalScore[name])
+tfm.exec.removeImage(Bon)
+tfm.exec.removeImage(Boff)
+Boff = tfm.exec.addImage("1875b7ed154.png","_1",785,720)
+ui.removeTextArea(0)
+chooseRandomEvent(name)
+Clicked = 1
+end -- Click
+end -- event-0
+
+function eventLoop() -- Loop-0
+T1 = T1 + 1
+-- every 1sec --
+if T1 >= 2 then -- 1sec
+--
+CTime = CTime - 1
+if Randomevent == 3 and GroundsTime > 0 then
+GroundsTime = GroundsTime - 1
+ui.addTextArea(1,"<p align = 'center'><font size='20' color = '#000000'>\n</a>"..GroundsTime,nil,370,2,60,60, 0xffffff, 0x000001,1,true)
+if GroundsTime == 3 then
+tfm.exec.addPhysicObject(0, 800,780, {type = 3, restitution = 0, friction = 0.3, width = 1000, height = 40, groundCollision = false, miceCollision = false})
+tfm.exec.addPhysicObject(1, 360,780, {type = 12, color = 0xff0000, restitution = 0, friction = 0, width = 120, height = 40, groundCollision = false, miceCollision = true})
+tfm.exec.addPhysicObject(2, 650,780, {type = 12, color = 0x0000ff, restitution = 0, friction = 0, width = 120, height = 40, groundCollision = false, miceCollision = true})
+tfm.exec.addPhysicObject(3, 950,780, {type = 12, color = 0xffff00, restitution = 0, friction = 0, width = 120, height = 40, groundCollision = false, miceCollision = true})
+tfm.exec.addPhysicObject(4, 1240,780, {type = 12, color = 0x00ff00, restitution = 0, friction = 0, width = 120, height = 40, groundCollision = false, miceCollision = true})
+end
+if GroundsTime == 0 then
+ui.removeTextArea(1)
+tfm.exec.addPhysicObject(0, 800,780, {type = 3, restitution = 0, friction = 0.3, width = 1000, height = 40, groundCollision = false, miceCollision = false})
+tfm.exec.removePhysicObject(1)
+tfm.exec.removePhysicObject(2)
+tfm.exec.removePhysicObject(3)
+tfm.exec.removePhysicObject(4)
+if RealGround == 1 then
+tfm.exec.addPhysicObject(1, 360,780, {type = 12, color = 0xff0000, restitution = 0, friction = 0, width = 120, height = 40, groundCollision = false, miceCollision = true})
+end
+if RealGround == 2 then
+tfm.exec.addPhysicObject(2, 650,780, {type = 12, color = 0x0000ff, restitution = 0, friction = 0, width = 120, height = 40, groundCollision = false, miceCollision = true})
+end
+if RealGround == 3 then
+tfm.exec.addPhysicObject(3, 950,780, {type = 12, color = 0xffff00, restitution = 0, friction = 0, width = 120, height = 40, groundCollision = false, miceCollision = true})
+end
+if RealGround == 4 then
+tfm.exec.addPhysicObject(4, 1240,780, {type = 12, color = 0x00ff00, restitution = 0, friction = 0, width = 120, height = 40, groundCollision = false, miceCollision = true})
+end
+end
+end
+--
+T1 = 0
+end -- 1sec
+-- every 0.5sec --
+if Randomevent == 12 then
+for name in next, tfm.get.room.playerList do
+SBCD[name] = SBCD[name] + 1
+end
+end
+if CTime == 9 and Randomevent == 11 then
+for name in next, tfm.get.room.playerList do
+if tfm.get.room.playerList[name].movingRight == true then
+tfm.exec.killPlayer(name)
+end
+if tfm.get.room.playerList[name].movingLeft == true then
+tfm.exec.killPlayer(name)
+end
+if tfm.get.room.playerList[name].isJumping == true then
+tfm.exec.killPlayer(name)
+end
+end
+end
+if CTime == 2 and Clicked == 1 then
+AcidRain = 0
+for name in next, tfm.get.room.playerList do
+if tfm.get.room.playerList[name].isVampire == true then
+tfm.exec.setVampirePlayer(clicker, false)
+tfm.exec.killPlayer(name)
+tfm.exec.removePhysicObject(1)
+tfm.exec.removePhysicObject(2)
+tfm.exec.removePhysicObject(3)
+tfm.exec.removePhysicObject(4)
+tfm.exec.removePhysicObject(5)
+end
+end
+end
+if CTime <= 0 and Clicked == 1 then
+tfm.exec.removeImage(Boff)
+tfm.exec.removeImage(Bon)
+Bon = tfm.exec.addImage("1875b7f1e29.png","_1",785,720)
+ui.addTextArea(0,"<font size='1000' color = '#ffffff'><a href='event:Click'> </a>",nil,780,710,35,30, 0x111111, 0x000000,0)
+eventTimeIsUp()
+eventResetVariables()
+end
+
+---
+
+if AcidRain == 1 then
+RainBlockID = RainBlockID + 3
+tfm.exec.addPhysicObject(RainBlockID, (math.random(380,1220)),400 -40, {type = 19, restitution = 0, friction = 0, width = 10, height = 20, dynamic = true, mass = 9999, fixedRotation = true, angularDamping = RainSpeed, groundCollision = false, miceCollision = true})
+tfm.exec.addPhysicObject(RainBlockID + 1, (math.random(380,1220)),400 -80, {type = 19, restitution = 0, friction = 0, width = 10, height = 20, dynamic = true, mass = 9999, fixedRotation = true, angularDamping = RainSpeed, groundCollision = false, miceCollision = true})
+tfm.exec.addPhysicObject(RainBlockID + 2, (math.random(380,1220)),400 -120, {type = 19, restitution = 0, friction = 0, width = 10, height = 20, dynamic = true, mass = 9999, fixedRotation = true, angularDamping = RainSpeed, groundCollision = false, miceCollision = true})
+tfm.exec.addImage("1855a945ec1.png","+"..RainBlockID,-5,-10)
+tfm.exec.addImage("1855a945ec1.png","+"..RainBlockID +1,-5,-10)
+tfm.exec.addImage("1855a945ec1.png","+"..RainBlockID +2,-5,-10)
+end
+end -- Loop-0
+
+function eventKeyboard(name, key, down, x, y) -- Keys
+if Randomevent == 11 then
+tfm.exec.killPlayer(name)
+end
+if Randomevent == 12 and key == 3 then
+if tfm.get.room.playerList[name].isDead == false and SBCD[name] >= 2 then
+if tfm.get.room.playerList[name].isFacingRight == true then
+tfm.exec.addShamanObject(17, x-25, y+25,90,3,-1)
+end
+if tfm.get.room.playerList[name].isFacingRight == false then
+tfm.exec.addShamanObject(17, x+25, y+25,270,-3,-1)
+end
+SBCD[name] = 0
+end
+end
+end -- Keys
+
+function eventTimeIsUp() -- Time's UP
+if Randomevent == 1 then
+tfm.exec.removePhysicObject(0)
+tfm.exec.addPhysicObject(0, 800,780, {type = 6, restitution = 0, friction = 0.3, width = 1200, height = 40, groundCollision = true, miceCollision = true})
+end
+if Randomevent == 2 then
+for name in next, tfm.get.room.playerList do
+tfm.exec.respawnPlayer(name)
+tfm.exec.setShaman(name, false)
+end
+end
+if Randomevent == 3 then
+tfm.exec.removePhysicObject(0)
+tfm.exec.removePhysicObject(1)
+tfm.exec.removePhysicObject(2)
+tfm.exec.removePhysicObject(3)
+tfm.exec.removePhysicObject(4)
+tfm.exec.addPhysicObject(0, 800,780, {type = 6, restitution = 0, friction = 0.3, width = 1200, height = 40, groundCollision = true, miceCollision = true})
+end
+if Randomevent == 7 then
+tfm.exec.removePhysicObject(1)
+tfm.exec.removePhysicObject(2)
+tfm.exec.removePhysicObject(3)
+tfm.exec.removePhysicObject(4)
+tfm.exec.removePhysicObject(5)
+end
+if Randomevent == 9 then
+tfm.exec.addPhysicObject(0, 800,780, {type = 6, restitution = 0, friction = 0.3, width = 1200, height = 40, groundCollision = true, miceCollision = true})
+tfm.exec.removePhysicObject(1)
+end
+if Randomevent == 10 then
+ui.addTextArea(0,"<font size='1000' color = '#ffffff'><a href='event:Click'> </a>",nil,780,710,35,30, 0x111111, 0x000000,0)
+end
+if Randomevent == 12 then
+tfm.exec.removePhysicObject(1)
+tfm.exec.removePhysicObject(2)
+tfm.exec.removePhysicObject(3)
+tfm.exec.removePhysicObject(4)
+tfm.exec.addPhysicObject(0, 800,780, {type = 6, restitution = 0, friction = 0.3, width = 1200, height = 40, groundCollision = true, miceCollision = true})
+end
+if Randomevent == 14 then
+tfm.exec.removeObject(HeavyBox1)
+tfm.exec.addPhysicObject(0, 800,780, {type = 6, restitution = 0, friction = 0.3, width = 1200, height = 40, groundCollision = true, miceCollision = true})
+end
+---
+for name in next, tfm.get.room.playerList do
+if tfm.get.room.playerList[name].isDead == false then
+OriginalScore[name] = OriginalScore[name] + 1
+tfm.exec.setPlayerScore(name, OriginalScore[name])
+end
+end
+tfm.exec.setUIMapName(RoomName)
+if Randomevent == 8 then
+eventMainMap()
+end
+for name in next, tfm.get.room.playerList do
+tfm.exec.respawnPlayer(name)
+end
+end -- Time's UP
+
+
+
+
+function chooseRandomEvent(clicker) -- Random-Event
+Randomevent = (math.random(1,14))
+--
+if Randomevent == 1 then
+tfm.exec.chatMessage(MREN1)
+CTime = 30
+tfm.exec.setUIMapName(REN1)
+tfm.exec.setGameTime(32)
+RainSpeed = (math.random(0,15) / 10)
+RainBlockID = 0
+AcidRain = 1
+tfm.exec.removePhysicObject(0)
+tfm.exec.addPhysicObject(0, 800,780, {type = 6, restitution = 0, friction = 0.3, width = 800, height = 40, groundCollision = true, miceCollision = true})
+end
+if Randomevent == 2 then
+tfm.exec.chatMessage(MREN2)
+CTime = 30
+tfm.exec.setUIMapName(REN2)
+tfm.exec.setGameTime(32)
+for name in next, tfm.get.room.playerList do
+tfm.exec.setShamanMode(name, 0)
+tfm.exec.setShaman(name, true)
+tfm.exec.setShamanMode(name, 0)
+end
+end
+if Randomevent == 3 then
+tfm.exec.chatMessage(MREN3)
+CTime = 30
+tfm.exec.setUIMapName(REN3)
+tfm.exec.setGameTime(32)
+RealGround = (math.random(1,4))
+GroundsTime = 20
+tfm.exec.addPhysicObject(1, 360,780, {type = 12, color = 0xff0000, restitution = 0, friction = 0, width = 120, height = 40, groundCollision = false, miceCollision = true})
+tfm.exec.addPhysicObject(2, 650,780, {type = 12, color = 0x0000ff, restitution = 0, friction = 0, width = 120, height = 40, groundCollision = false, miceCollision = true})
+tfm.exec.addPhysicObject(3, 950,780, {type = 12, color = 0xffff00, restitution = 0, friction = 0, width = 120, height = 40, groundCollision = false, miceCollision = true})
+tfm.exec.addPhysicObject(4, 1240,780, {type = 12, color = 0x00ff00, restitution = 0, friction = 0, width = 120, height = 40, groundCollision = false, miceCollision = true})
+end
+if Randomevent == 4 then
+tfm.exec.chatMessage(MREN4)
+CTime = 30
+tfm.exec.setUIMapName(REN4)
+tfm.exec.setGameTime(32)
+tfm.exec.setVampirePlayer(clicker, true)
+tfm.exec.addPhysicObject(1, 550,700, {type = 10, color = 0xff0000, restitution = 0, friction = 0.3, width = 120, height = 40, groundCollision = false, miceCollision = true})
+tfm.exec.addPhysicObject(2, 1050,700, {type = 10, color = 0x0000ff, restitution = 0, friction = 0.3, width = 120, height = 40, groundCollision = false, miceCollision = true})
+tfm.exec.addPhysicObject(3, 300,700, {type = 10, color = 0xffff00, restitution = 0, friction = 0.3, width = 120, height = 40, groundCollision = true, miceCollision = true})
+tfm.exec.addPhysicObject(4, 1300,700, {type = 10, color = 0x00ff00, restitution = 0, friction = 0.3, width = 120, height = 40, groundCollision = true, miceCollision = true})
+tfm.exec.addPhysicObject(5, 800,660, {type = 10, restitution = 0, friction = 0.3, width = 200, height = 40, groundCollision = true, miceCollision = true})
+end
+if Randomevent == 5 then
+tfm.exec.chatMessage(MREN5)
+CTime = 7
+tfm.exec.setUIMapName(REN5)
+tfm.exec.setGameTime(8)
+tfm.exec.addShamanObject(40, 800, 600)
+end
+if Randomevent == 6 then
+CTime = 7
+tfm.exec.setUIMapName(REN6)
+tfm.exec.chatMessage(MREN6)
+tfm.exec.setGameTime(8)
+tfm.exec.addShamanObject(40, 560, 760)
+
+tfm.exec.addShamanObject(40, 680, 760)
+
+tfm.exec.addShamanObject(40, 800, 760)
+
+tfm.exec.addShamanObject(40, 920, 760)
+
+tfm.exec.addShamanObject(40, 1040, 760)
+end
+if Randomevent == 7 then
+CTime = 15
+tfm.exec.setUIMapName(REN7)
+tfm.exec.chatMessage(MREN7)
+tfm.exec.setGameTime(16)
+tfm.exec.addPhysicObject(1, 1200,660, {type = 12, color = 0x000000, restitution = 0, friction = 0.04, width = 40, height = 200, groundCollision = false, miceCollision = true})
+tfm.exec.addPhysicObject(2, 980,580, {type = 12, color = 0x000000, restitution = 0, friction = 0.04, width = 40, height = 40, groundCollision = false, miceCollision = true})
+tfm.exec.addPhysicObject(3, 800,580, {type = 12, color = 0x000000, restitution = 0, friction = 0.04, width = 40, height = 40, groundCollision = false, miceCollision = true, contactListener = true})
+tfm.exec.addPhysicObject(4, 400,660, {type = 12, color = 0x000000, restitution = 0, friction = 0.04, width = 40, height = 200, groundCollision = false, miceCollision = true})
+tfm.exec.addPhysicObject(5, 620,580, {type = 12, color = 0x000000, restitution = 0, friction = 0, width = 40, height = 40, groundCollision = false, miceCollision = true})
+end
+if Randomevent == 8 then
+tfm.exec.chatMessage(MREN8)
+CTime = 30
+tfm.exec.newGame([[<C><P C="" MEDATA=";;;;-0;0:::1-"/><Z><S><S T="12" X="400" Y="100" L="800" H="20" P="0,0,0.3,0.2,0,0,0,0" o="000000" v="5000"/><S T="14" X="-100" Y="200" L="200" H="800" P="0,0,0,0,0,0,0,0"/><S T="14" X="900" Y="200" L="200" H="800" P="0,0,0,0,0,0,0,0"/><S T="14" X="400" Y="-100" L="200" H="1200" P="0,0,0,0,-90,0,0,0"/><S T="13" X="400" Y="200" L="20" P="0,0,0,0,0,0,0,0" o="89A7F5"/><S T="13" X="480" Y="200" L="10" P="0,0,0,0,0,0,0,0" o="89A7F5"/><S T="13" X="80" Y="200" L="10" P="0,0,0,0,0,0,0,0" o="89A7F5"/><S T="13" X="320" Y="350" L="10" P="0,0,0,0,0,0,0,0" o="89A7F5"/><S T="13" X="560" Y="200" L="10" P="0,0,0,0,0,0,0,0" o="89A7F5"/><S T="13" X="160" Y="200" L="10" P="0,0,0,0,0,0,0,0" o="89A7F5"/><S T="13" X="400" Y="350" L="10" P="0,0,0,0,0,0,0,0" o="89A7F5"/><S T="13" X="640" Y="200" L="10" P="0,0,0,0,0,0,0,0" o="89A7F5"/><S T="13" X="240" Y="200" L="10" P="0,0,0,0,0,0,0,0" o="89A7F5"/><S T="13" X="480" Y="350" L="10" P="0,0,0,0,0,0,0,0" o="89A7F5"/><S T="13" X="720" Y="200" L="10" P="0,0,0,0,0,0,0,0" o="89A7F5"/><S T="13" X="320" Y="200" L="10" P="0,0,0,0,0,0,0,0" o="89A7F5"/><S T="13" X="560" Y="350" L="10" P="0,0,0,0,0,0,0,0" o="89A7F5"/><S T="13" X="240" Y="350" L="10" P="0,0,0,0,0,0,0,0" o="89A7F5"/></S><D><P X="-2" Y="0" T="257" P="0,0"/><DS X="400" Y="70"/></D><O/><L/></Z></C>]])
+tfm.exec.setUIMapName(REN8)
+tfm.exec.setGameTime(32)
+end
+if Randomevent == 9 then
+tfm.exec.chatMessage(MREN9)
+CTime = 30
+tfm.exec.setUIMapName(REN9)
+tfm.exec.setGameTime(32)
+tfm.exec.addPhysicObject(0, 800,780, {type = 3, restitution = 0, friction = 0.3, width = 1000, height = 40, groundCollision = ture, miceCollision = false})
+--tfm.exec.addPhysicObject(1, 800,700, {type = 1, restitution = 0, friction = 0, width = 100, height = 120, dynamic = true, groundCollision = ture, miceCollision = true})
+tfm.exec.addShamanObject(54, 720, 700)
+tfm.exec.addShamanObject(54, 800, 700)
+tfm.exec.addShamanObject(54, 880, 700)
+for name in next, tfm.get.room.playerList do
+tfm.exec.movePlayer(name, 800, 640)
+end
+end
+if Randomevent == 10 then
+tfm.exec.chatMessage(MREN10)
+CTime = 10
+tfm.exec.setUIMapName(REN10)
+tfm.exec.setGameTime(11)
+ui.addTextArea(0,"<font size='1000' color = '#ffffff'><a href='event:FakeClick'> </a>",nil,780,710,35,30, 0x111111, 0x000000,0)
+tfm.exec.removeImage(Boff)
+tfm.exec.removeImage(Bon)
+Bon = tfm.exec.addImage("1875b7f1e29.png","_1",785,720,nil,1,1,0,0.7)
+end
+if Randomevent == 11 then
+tfm.exec.chatMessage(MREN11)
+CTime = 10
+tfm.exec.setUIMapName(REN11)
+tfm.exec.setGameTime(11)
+for name in next, tfm.get.room.playerList do
+system.bindKeyboard(name, 0, true, true)
+system.bindKeyboard(name, 1, true, true)
+system.bindKeyboard(name, 2, true, true)
+system.bindKeyboard(name, 3, true, true)
+end
+end
+if Randomevent == 12 then
+tfm.exec.chatMessage(MREN12)
+CTime = 30
+tfm.exec.setUIMapName(REN12)
+tfm.exec.setGameTime(32)
+tfm.exec.addPhysicObject(0, 800,780, {type = 6, restitution = 0, friction = 0.3, width = 200, height = 40, groundCollision = true, miceCollision = true})
+tfm.exec.addPhysicObject(1, 550,780, {type = 6, color = 0xff0000, restitution = 0, friction = 0.3, width = 80, height = 40, groundCollision = false, miceCollision = true})
+tfm.exec.addPhysicObject(2, 1050,780, {type = 6, color = 0x0000ff, restitution = 0, friction = 0.3, width = 80, height = 40, groundCollision = false, miceCollision = true})
+tfm.exec.addPhysicObject(3, 300,780, {type = 6, color = 0xffff00, restitution = 0, friction = 0.3, width = 80, height = 40, groundCollision = true, miceCollision = true})
+tfm.exec.addPhysicObject(4, 1300,780, {type = 6, color = 0x00ff00, restitution = 0, friction = 0.3, width = 80, height = 40, groundCollision = true, miceCollision = true})
+for name in next, tfm.get.room.playerList do
+system.bindKeyboard(name, 3, true, true)
+end
+end
+if Randomevent == 13 then
+tfm.exec.chatMessage(MREN13)
+CTime = 6
+tfm.exec.setUIMapName(REN13)
+tfm.exec.setGameTime(6)
+tfm.exec.addShamanObject(17, 1230, 700,270,-3,-1)
+tfm.exec.addShamanObject(17, 1220, 700,270,-3,-1)
+tfm.exec.addShamanObject(17, 1210, 700,270,-3,-1)
+tfm.exec.addShamanObject(17, 1200, 700,270,-3,-1)
+tfm.exec.addShamanObject(17, 1200, 700,270,-3,-1)
+tfm.exec.addShamanObject(17, 1200, 700,270,-3,-1)
+tfm.exec.addShamanObject(17, 1200, 700,270,-3,-1)
+tfm.exec.addShamanObject(17, 1200, 700,270,-3,-1)
+tfm.exec.addShamanObject(17, 1200, 700,270,-3,-1)
+tfm.exec.addShamanObject(17, 1200, 700,270,-3,-1)
+end
+if Randomevent == 14 then
+tfm.exec.chatMessage(MREN14)
+CTime = 30
+tfm.exec.setUIMapName(REN14)
+tfm.exec.setGameTime(32)
+for name in next, tfm.get.room.playerList do
+PNTO = 1
+if PNT == 1 and PNTO == 1 then
+tfm.exec.movePlayer(name,760,770)
+PNTO = 0
+PNT = 2
+end
+if PNT == 2 and PNTO == 1 then
+tfm.exec.movePlayer(name,840,770)
+PNTO = 0
+PNT = 1
+end
+end
+HeavyBox1 = tfm.exec.addShamanObject(61, 800, 750)
+tfm.exec.addPhysicObject(0, 800,780, {type = 1, restitution = 0, friction = 0, width = 400, height = 40, groundCollision = ture, miceCollision = true})
+end
+end -- Random-Event
