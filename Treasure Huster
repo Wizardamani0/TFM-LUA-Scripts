@@ -1,0 +1,594 @@
+tfm.exec.disableAutoShaman(true)
+tfm.exec.disableAfkDeath(true)
+tfm.exec.disableAutoNewGame(true)
+tfm.exec.disablePhysicalConsumables(true)
+tfm.exec.disableDebugCommand(true)
+tfm.exec.disableMortCommand(true)
+ 
+tfm.exec.newGame([[<C><P L="4800" H="1200" D="17b6de23b2d.png,805,370;17b6ddcf133.png,2670,555;17b6ddcd9b4.png,2660,895;17b6004c6db.png,4020,965;17b6004c6db.png,3575,485;17b6004c6db.png,3790,320;17b6004c6db.png,3925,680;17b6004c6db.png,3315,620;17b6004c6db.png,2970,358;17b6004c6db.png,2385,335;17b6004c6db.png,1700,965;17b6004c6db.png,1330,435;17b6004c6db.png,630,340;17b6004c6db.png,690,680;x_transformice/x_evt/x_evt_25/abwnpzec/spot-plante2.png,3233,334;x_transformice/x_evt/x_evt_25/abwnpzec/pont-pierre.png,1340,783;x_transformice/x_evt/x_evt_25/abwnpzec/pont-pierre.png,1339,783;x_transformice/x_evt/x_evt_25/abwnpzec/chateau-2e.png,1996,221;x_transformice/x_evt/x_evt_25/abwnpzec/chateau-1er.png,1997,221;x_transformice/x_evt/x_evt_25/abwnpzec/chateau-rdc.png,1997,222;x_transformice/x_evt/x_evt_25/abwnpzec/map-poudlard.jpg,400,200" DS="m;1640,769,1640,769" defilante="0,0,0,1" Ca="" MEDATA="0,2:1,2:2,2:3,2:4,2:5,2:6,2:7,2:8,2:9,2:10,2:11,2:12,2:13,2:14,2:15,2:16,2:17,2:18,2:19,2:20,2:21,2:22,2:23,2:24,2:25,2:26,2:27,2:28,2:29,2:30,2:31,2:32,2:33,2:34,2:35,2:36,2:37,2:38,2:39,2:40,2:41,2:42,2:43,2:44,2:45,2:46,2:47,2:48,2:49,2:50,2:51,2:52,2:53,2:54,2:55,2:56,2:57,2:58,2:59,2:60,2:61,2:62,2:63,2:64,2:65,2:66,2:67,2:68,2:69,2:70,2:71,2:72,2:73,2:74,2:75,2:76,2:77,2:78,2:79,2:80,2:81,2:82,2:83,2:84,2:85,2:86,2:87,2:88,2:89,2:90,2:91,2:92,2:93,2:94,2:95,2:96,2:97,2:98,2:99,2:100,2:101,2:102,2:103,2:104,2:105,2:106,2:107,2:108,2:109,2:110,2:111,2:112,2:113,2:114,2:115,2:116,2:117,2:118,2:119,2:120,2:121,2:122,2:123,2:124,2:125,2:126,2:127,2:128,2:129,2:130,2:131,2:132,2:133,2:134,2:135,2:136,2:137,2:138,2:139,2:140,2:141,2:142,2:143,2:144,2:145,2:146,2;;;;0,4:1,4:2,4:3,4:4,4:5,4:6,4:7,4:8,4:9,4:10,4:11,4:12,4:13,4:14,4:15,4:16,4:17,4-0;0:::1-"/><Z><S><S T="14" X="2381" Y="932" L="1030" H="130" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="1267" Y="792" L="10" H="10" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="1603" Y="802" L="678" H="35" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2200" Y="995" L="678" H="35" P="0,0,0.3,0.2,36,0,0,0"/><S T="9" X="1137" Y="959" L="1471" H="101" P="0,0,0,0,0,0,0,0" m=""/><S T="9" X="3689" Y="953" L="1671" H="101" P="0,0,0,0,0,0,0,0" m=""/><S T="9" X="3698" Y="920" L="471" H="101" P="0,0,0,0,0,0,0,0" m=""/><S T="12" X="915" Y="890" L="32" H="40" P="0,0,0.3,0.2,0,0,0,0" o="324650" m=""/><S T="12" X="920" Y="899" L="15" H="38" P="0,0,0.3,0.2,90,0,0,0" o="324650" m=""/><S T="14" X="1192" Y="886" L="303" H="53" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="1259" Y="846" L="142" H="44" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="1340" Y="850" L="142" H="16" P="0,0,0.3,0.2,-30,0,0,0"/><S T="14" X="1447" Y="834" L="104" H="16" P="0,0,0.3,0.2,30,0,0,0"/><S T="14" X="1483" Y="856" L="108" H="44" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="1642" Y="856" L="108" H="44" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="1819" Y="856" L="108" H="44" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="1800" Y="828" L="99" H="44" P="0,0,0.3,0.2,30,0,0,0"/><S T="14" X="1680" Y="828" L="99" H="44" P="0,0,0.3,0.2,-30,0,0,0"/><S T="14" X="1519" Y="827" L="99" H="38" P="0,0,0.3,0.2,-30,0,0,0"/><S T="14" X="1608" Y="826" L="99" H="38" P="0,0,0.3,0.2,30,0,0,0"/><S T="14" X="855" Y="763" L="220" H="16" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="1076" Y="749" L="122" H="11" P="0,0,0.3,0.2,33,0,0,0"/><S T="14" X="677" Y="742" L="136" H="56" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="990" Y="739" L="74" H="56" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="742" Y="382" L="301" H="29" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="746" Y="402" L="283" H="26" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="756" Y="423" L="242" H="23" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="784" Y="440" L="149" H="21" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="866" Y="206" L="296" H="10" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="1024" Y="354" L="307" H="10" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="1028" Y="523" L="30" H="15" P="0,0,10,0.2,0,0,0,0"/><S T="14" X="1256" Y="489" L="324" H="38" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="1258" Y="568" L="324" H="38" P="0,0,0.3,0.2,-30,0,0,0"/><S T="14" X="1113" Y="573" L="185" H="38" P="0,0,0.3,0.2,-90,0,0,0"/><S T="14" X="554" Y="437" L="37" H="10" P="0,0,0.3,0.2,-30,0,0,0"/><S T="14" X="560" Y="422" L="37" H="10" P="0,0,0.3,0.2,-70,0,0,0"/><S T="14" X="581" Y="393" L="37" H="10" P="0,0,0.3,0.2,-40,0,0,0"/><S T="14" X="574" Y="451" L="37" H="10" P="0,0,0.3,0.2,-110,0,0,0"/><S T="14" X="574" Y="472" L="37" H="10" P="0,0,0.3,0.2,-90,0,0,0"/><S T="14" X="572" Y="505" L="37" H="10" P="0,0,0.3,0.2,-80,0,0,0"/><S T="14" X="562" Y="535" L="37" H="10" P="0,0,0.3,0.2,-60,0,0,0"/><S T="14" X="547" Y="557" L="37" H="10" P="0,0,0.3,0.2,-40,0,0,0"/><S T="14" X="480" Y="488" L="37" H="10" P="0,0,0.3,0.2,-20,0,0,0"/><S T="14" X="461" Y="482" L="37" H="10" P="0,0,0.3,0.2,40,0,0,0"/><S T="14" X="429" Y="468" L="37" H="10" P="0,0,0.3,0.2,10,0,0,0"/><S T="14" X="529" Y="576" L="37" H="10" P="0,0,0.3,0.2,-60,0,0,0"/><S T="14" X="507" Y="682" L="37" H="10" P="0,0,0.3,0.2,-160,0,0,0"/><S T="14" X="502" Y="667" L="37" H="10" P="0,0,0.3,0.2,-120,0,0,0"/><S T="14" X="476" Y="645" L="37" H="10" P="0,0,0.3,0.2,-160,0,0,0"/><S T="14" X="450" Y="621" L="37" H="10" P="0,0,0.3,0.2,-110,0,0,0"/><S T="14" X="416" Y="592" L="37" H="10" P="0,0,0.3,0.2,-200,0,0,0"/><S T="14" X="437" Y="593" L="20" H="10" P="0,0,0.3,0.2,-130,0,0,0"/><S T="14" X="528" Y="601" L="25" H="10" P="0,0,0.3,0.2,-90,0,0,0"/><S T="14" X="516" Y="601" L="25" H="10" P="0,0,0.3,0.2,-40,0,0,0"/><S T="14" X="406" Y="794" L="26" H="481" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="1869" Y="1013" L="26" H="3000" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="3009" Y="1013" L="26" H="3000" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="430" Y="927" L="25" H="60" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="401" Y="476" L="43" H="159" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="387" Y="298" L="24" H="260" P="0,0,0,0,0,0,0,0"/><S T="14" X="702" Y="891" L="146" H="41" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="616" Y="902" L="55" H="13" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="614" Y="887" L="38" H="13" P="0,0,0.3,0.2,-30,0,0,0"/><S T="14" X="2400" Y="853" L="72" H="37" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2326" Y="866" L="90" H="10" P="0,0,0.3,0.2,-30,0,0,0"/><S T="14" X="2472" Y="864" L="90" H="10" P="0,0,0.3,0.2,30,0,0,0"/><S T="14" X="2161" Y="753" L="240" H="10" P="0,0,0.3,0.2,30,0,0,0"/><S T="14" X="2066" Y="637" L="53" H="16" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2738" Y="637" L="53" H="16" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2047" Y="555" L="421" H="16" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="2757" Y="555" L="421" H="16" P="0,0,0.3,0.2,-90,0,0,0"/><S T="14" X="2188" Y="606" L="35" H="12" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2603" Y="606" L="35" H="12" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2200" Y="592" L="35" H="12" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="2591" Y="592" L="35" H="12" P="0,0,0.3,0.2,-90,0,0,0"/><S T="14" X="2394" Y="572" L="396" H="10" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2447" Y="681" L="630" H="10" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2082" Y="272" L="163" H="95" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2715" Y="272" L="163" H="95" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2085" Y="325" L="135" H="17" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2718" Y="325" L="135" H="17" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2079" Y="338" L="105" H="15" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2712" Y="338" L="105" H="15" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2405" Y="413" L="532" H="15" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2272" Y="388" L="60" H="31" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2405" Y="388" L="60" H="31" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2533" Y="388" L="60" H="31" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3436" Y="873" L="149" H="75" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3456" Y="744" L="193" H="41" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="3388" Y="655" L="162" H="14" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3535" Y="684" L="140" H="14" P="0,0,0.3,0.2,25,0,0,0"/><S T="14" X="3786" Y="637" L="114" H="14" P="0,0,0.3,0.2,92,0,0,0"/><S T="14" X="3678" Y="737" L="242" H="14" P="0,0,0.3,0.2,-25,0,0,0"/><S T="14" X="3594" Y="859" L="15" H="15" P="0,0,0.3,0.2,-5,0,0,0"/><S T="14" X="3713" Y="855" L="15" H="15" P="0,0,0.3,0.2,5,0,0,0"/><S T="14" X="3830" Y="857" L="15" H="15" P="0,0,0.3,0.2,5,0,0,0"/><S T="14" X="3917" Y="833" L="15" H="15" P="0,0,0.3,0.2,15,0,0,0"/><S T="14" X="3832" Y="801" L="15" H="15" P="0,0,0.3,0.2,-15,0,0,0"/><S T="14" X="3760" Y="768" L="15" H="15" P="0,0,0.3,0.2,5,0,0,0"/><S T="14" X="3840" Y="729" L="15" H="15" P="0,0,0.3,0.2,5,0,0,0"/><S T="14" X="4108" Y="491" L="10" H="10" P="0,0,0.3,0.2,5,0,0,0"/><S T="14" X="4248" Y="491" L="10" H="10" P="0,0,0.3,0.2,5,0,0,0"/><S T="14" X="3945" Y="724" L="73" H="28" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3946" Y="826" L="25" H="167" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="4018" Y="904" L="25" H="156" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="4161" Y="726" L="25" H="145" P="0,0,0.3,0.2,80,0,0,0"/><S T="4" X="4302" Y="667" L="12" H="105" P="0,0,20,0.2,0,0,0,0" m=""/><S T="4" X="4302" Y="730" L="10" H="10" P="0,0,20,0.2,0,0,0,0" m=""/><S T="4" X="4286" Y="644" L="10" H="10" P="0,0,20,0.2,0,0,0,0" m=""/><S T="14" X="4371" Y="693" L="59" H="10" P="0,0,0.3,0.2,-10,0,0,0"/><S T="14" X="2857" Y="573" L="10" H="488" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2898" Y="301" L="25" H="10" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2873" Y="316" L="25" H="10" P="0,0,0.3,0.2,-40,0,0,0"/><S T="14" X="3110" Y="315" L="25" H="10" P="0,0,0.3,0.2,30,0,0,0"/><S T="14" X="3078" Y="302" L="15" H="10" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3263" Y="329" L="260" H="10" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3294" Y="398" L="198" H="10" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3370" Y="365" L="52" H="67" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3419" Y="405" L="117" H="29" P="0,0,0.3,0.2,30,0,0,0"/><S T="14" X="3705" Y="434" L="158" H="31" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="4006" Y="370" L="576" H="31" P="0,0,0.3,0.2,180,0,0,0"/><S T="14" X="4093" Y="595" L="606" H="31" P="0,0,0.3,0.2,180,0,0,0"/><S T="14" X="4488" Y="417" L="576" H="31" P="0,0,0.3,0.2,140,0,0,0"/><S T="14" X="4394" Y="355" L="270" H="31" P="0,0,0.3,0.2,270,0,0,0"/><S T="14" X="4416" Y="762" L="3000" H="31" P="0,0,0,0.2,270,0,0,0"/><S T="14" X="3455" Y="501" L="157" H="39" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="3584" Y="547" L="273" H="60" P="0,0,0.3,0.2,180,0,0,0"/><S T="14" X="3373" Y="415" L="117" H="10" P="0,0,0.3,0.2,20,0,0,0"/><S T="14" X="3419" Y="444" L="117" H="10" P="0,0,0.3,0.2,40,0,0,0"/><S T="14" X="3432" Y="460" L="117" H="10" P="0,0,0.3,0.2,70,0,0,0"/><S T="14" X="3822" Y="572" L="19" H="11" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3875" Y="565" L="79" H="29" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3930" Y="568" L="43" H="25" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3897" Y="539" L="46" H="21" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3963" Y="526" L="111" H="19" P="0,0,0.3,0.2,-20,0,0,0"/><S T="14" X="2939" Y="395" L="158" H="11" P="0,0,0.3,0.2,0,0,0,0"/><S T="9" X="848" Y="745" L="210" H="45" P="0,0,0,0,0,0,0,0" m=""/><S T="9" X="3583" Y="479" L="216" H="81" P="0,0,0,0,0,0,0,0" m=""/><S T="9" X="4338" Y="369" L="102" H="28" P="0,0,0,0,0,0,0,0" m=""/><S T="9" X="4397" Y="743" L="35" H="324" P="0,0,0,0,0,0,0,0" m=""/><S T="2" X="986" Y="1007" L="74" H="20" P="0,0,0,1.2,0,0,0,0" m=""/><S T="12" X="200" Y="600" L="400" H="1200" P="0,0,0.3,0.2,0,0,0,0" o="000000" N=""/><S T="12" X="1880" Y="100" L="200" H="3000" P="0,0,0.3,0.2,90,0,0,0" o="000000" N=""/><S T="12" X="1880" Y="1100" L="200" H="3000" P="0,0,0.3,0.2,90,0,0,0" o="000000" N=""/><S T="12" X="2940" Y="100" L="200" H="3000" P="0,0,0.3,0.2,90,0,0,0" o="000000" N=""/><S T="12" X="2920" Y="1100" L="200" H="3000" P="0,0,0.3,0.2,90,0,0,0" o="000000" N=""/><S T="12" X="4600" Y="600" L="400" H="1200" P="0,0,0.3,0.2,0,0,0,0" o="000000" N=""/></S><D/><O/><L/></Z></C>]])
+tfm.exec.setUIMapName("Treasures Hunter")
+tfm.exec.setNameColor("wizardamani0#6277",0xFF7800)
+tfm.exec.setGameTime(300,true)
+function eventPlayerDied(name)
+ui.addTextArea(33,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",name,-80,-80,900,460, 0x000000, 0xff0000,0,true,false)
+end
+local translations = {
+    ar = {
+        help= "<J>مرحبا بك في لعبة البحت عن الكنز\nكل ما عليك فعله هو البحت عن الكنز و الضغط عليه قبل الاخرين\n\n\nتم صناعة هادا النمط بواسطة\n<VI>wizardamani0#6277\n<J>شكرا للعبك النمط\n\n\n<VP>الرجاء التبرع لي بالجبن في رسائل و ارساله لي للمزيد من التحديتات",
+        found = "لقد وجدت الكنز اختر مادا تريد ان تفعل بالمال الان",
+        namecolor = "تغيير لون اسمك",
+        meepall = "اعطاء قدرة ميب للجميع",
+        vampire = "التحول الى خفاش\n(اضغط بعد بداية الجولة الجديدة)",
+        lazer = "اطلاق اشعة ليزر قاتل\n(لمدة جولة واحدة فقط)",
+        choose = "اختيار",
+        trap = "الصندوق الزائف\nبعد ان تضغط اختيار\nحدد مكان وضع الفخ\n(F) ثم اضغط على حرف",
+    },
+    en = {
+        help = "<J>Welcome to the treasure hunt game\nAll you have to do is search for the treasure and click on it before others.\n\n This script is made by \n<VI>wizardamani0#6277\n<J>You can talk to him at any time",
+        found = "<font size='14' color = '#000000'>you found the treasure, choose what you want to do with the money now",
+        namecolor = "<font size='9' color = '#000000'>Change the color of your name",
+        meepall = "MEEP FOR EVERYONE",
+        vampire = "Transform into a vampire\n(Click after the start of the new round)",
+        lazer = "Laser shooting",
+        choose = "<font size='9' color = '#000000'>choose",
+        trap = "<font size='9' color = '#000000'>The fake chest, after you press Select, select the location of the trap, then press the letter (F)",
+    }
+}
+lang = tfm.get.room.community
+text = translations[lang] or translations["en"]
+
+tfm.exec.addImage("17b6ddc60cb.png", "!1", 1905, 940, nil)
+tfm.exec.addImage("179f566e488.png", "!1", 15400, 130, nil,1,1.8)
+local SEC1 = {}
+local SEC2 = {}
+local SEC3 = {}
+local a = math.random(1,11)
+local b = 1000
+local s = 0
+local L = 1000
+local R = 1000
+local t = 60
+function eventLoop(currentTime, timeRemaining)
+b = b+1
+L = L+1
+R = R+1
+if L == 1 then
+ui.removeTextArea(772)
+ui.removeTextArea(771)
+end  
+if L == 1 then
+L1 = tfm.exec.addImage("179f566e488.png", "!1", 1440, 130, nil,1,1.8)
+tfm.exec.addPhysicObject(1,1550,700,{
+type=19,
+restitution=0.2,
+friction=0.3,
+width=20,
+height=1000,
+groundCollision=true
+})
+end  
+if L == 8 then
+tfm.exec.removePhysicObject(1)
+tfm.exec.removeImage(L1)
+end  
+if R == 1 then
+ui.removeTextArea(772)
+ui.removeTextArea(771)
+end  
+if R == 1 then
+L1 = tfm.exec.addImage("179f566e488.png", "!1", 1640, 130, nil,1,1.8)
+tfm.exec.addPhysicObject(1,1750,700,{
+type=19,
+restitution=0.2,
+friction=0.3,
+width=20,
+height=1000,
+groundCollision=true
+})
+
+end  
+if R == 8 then
+tfm.exec.removePhysicObject(1)
+tfm.exec.removeImage(L1)
+end  
+if s == 0 then
+ui.addTextArea(501,"<font size='1000' color = '#000000'><a href='event:sec2'> </a>",nil,1915,950,50,36, 0xFFFFFF, 0x000000,0)
+ui.addTextArea(0,"<font size='10' color = '#000000'><a href='event:S0'>HELP!</a>",nil,750,370,36,18, 0xFFFFFF, 0x000000,1,true,false)
+ui.addTextArea(99,"<font size='15' color = '#000000'><b><p align = 'center'><J>BY:wizardamani0#6277</a>",nil,10,378,200,160, 0x174E56, 0x000000,1,true,false)
+end  
+if a == 1 then
+t1 = tfm.exec.addImage("17b6004c6db.png", "!1", 690, 680, nil)
+ui.addTextArea(1,"<font size='1000' color = '#3172DE'><a href='event:win'> </a>",nil,690,680,40,35,0,true,true)
+a = 0
+end  
+if a == 2 then
+t1 = tfm.exec.addImage("17b6004c6db.png", "!1", 630, 340, nil)
+ui.addTextArea(1,"<font size='1000' color = '#3172DE'><a href='event:win'> </a>",nil,630,340,40,35,0,true,true)
+a = 0
+end  
+if a == 3 then
+t1 = tfm.exec.addImage("17b6004c6db.png", "!1", 1330, 435, nil)
+ui.addTextArea(1,"<font size='1000' color = '#3172DE'><a href='event:win'> </a>",nil,1330,435,40,35,0,true,true)
+a = 0
+end  
+if a == 4 then
+t1 = tfm.exec.addImage("17b6004c6db.png", "!1", 1700, 965, nil)
+ui.addTextArea(1,"<font size='1000' color = '#3172DE'><a href='event:win'> </a>",nil,1700,965,40,35,0,true,true)
+a = 0
+end  
+if a == 5 then
+t1 = tfm.exec.addImage("17b6004c6db.png", "!1", 2385, 335, nil)
+ui.addTextArea(1,"<font size='1000' color = '#3172DE'><a href='event:win'> </a>",nil,2385,335,40,35,0,true,true)
+a = 0
+end  
+if a == 6 then
+t1 = tfm.exec.addImage("17b6004c6db.png", "!1", 2970, 360, nil)
+ui.addTextArea(1,"<font size='1000' color = '#3172DE'><a href='event:win'> </a>",nil,2970,360,40,35,0,true,true)
+a = 0
+end  
+if a == 7 then
+t1 = tfm.exec.addImage("17b6004c6db.png", "!1", 3315, 620, nil)
+ui.addTextArea(1,"<font size='1000' color = '#3172DE'><a href='event:win'> </a>",nil,3315,620,40,35,0,true,true)
+a = 0
+end  
+if a == 8 then
+t1 = tfm.exec.addImage("17b6004c6db.png", "!1", 3575, 485, nil)
+ui.addTextArea(1,"<font size='1000' color = '#3172DE'><a href='event:win'> </a>",nil,3575,485,40,35,0,true,true)
+a = 0
+end  
+if a == 9 then
+t1 = tfm.exec.addImage("17b6004c6db.png", "!1", 3790, 320, nil)
+ui.addTextArea(1,"<font size='1000' color = '#3172DE'><a href='event:win'> </a>",nil,3790,320,40,35,0,true,true)
+a = 0
+end  
+if a == 10 then
+t1 = tfm.exec.addImage("17b6004c6db.png", "!1", 3925, 680, nil)
+ui.addTextArea(1,"<font size='1000' color = '#3172DE'><a href='event:win'> </a>",nil,3925,680,40,35,0,true,true)
+a = 0
+end  
+if a == 11 then
+t1 = tfm.exec.addImage("17b6004c6db.png", "!1", 4020, 965, nil)
+ui.addTextArea(1,"<font size='1000' color = '#3172DE'><a href='event:win'> </a>",nil,4020,965,40,35,0,true,true)
+a = 0
+end  
+if b == 12 then
+tfm.exec.disableAutoShaman(true)
+tfm.exec.disableAfkDeath(true)
+tfm.exec.disableAutoNewGame(true)
+tfm.exec.disablePhysicalConsumables(true)
+tfm.exec.disableDebugCommand(true)
+tfm.exec.disableMortCommand(true)
+
+tfm.exec.newGame([[<C><P L="4800" H="1200" D="17b6de23b2d.png,805,370;17b6ddcf133.png,2670,555;17b6ddcd9b4.png,2660,895;17b6004c6db.png,4020,965;17b6004c6db.png,3575,485;17b6004c6db.png,3790,320;17b6004c6db.png,3925,680;17b6004c6db.png,3315,620;17b6004c6db.png,2970,358;17b6004c6db.png,2385,335;17b6004c6db.png,1700,965;17b6004c6db.png,1330,435;17b6004c6db.png,630,340;17b6004c6db.png,690,680;x_transformice/x_evt/x_evt_25/abwnpzec/spot-plante2.png,3233,334;x_transformice/x_evt/x_evt_25/abwnpzec/pont-pierre.png,1340,783;x_transformice/x_evt/x_evt_25/abwnpzec/pont-pierre.png,1339,783;x_transformice/x_evt/x_evt_25/abwnpzec/chateau-2e.png,1996,221;x_transformice/x_evt/x_evt_25/abwnpzec/chateau-1er.png,1997,221;x_transformice/x_evt/x_evt_25/abwnpzec/chateau-rdc.png,1997,222;x_transformice/x_evt/x_evt_25/abwnpzec/map-poudlard.jpg,400,200" DS="m;1640,769,1640,769" defilante="0,0,0,1" Ca="" MEDATA="0,2:1,2:2,2:3,2:4,2:5,2:6,2:7,2:8,2:9,2:10,2:11,2:12,2:13,2:14,2:15,2:16,2:17,2:18,2:19,2:20,2:21,2:22,2:23,2:24,2:25,2:26,2:27,2:28,2:29,2:30,2:31,2:32,2:33,2:34,2:35,2:36,2:37,2:38,2:39,2:40,2:41,2:42,2:43,2:44,2:45,2:46,2:47,2:48,2:49,2:50,2:51,2:52,2:53,2:54,2:55,2:56,2:57,2:58,2:59,2:60,2:61,2:62,2:63,3:64,2:65,3:66,2:67,2:68,2:69,2:70,2:71,2:72,2:73,2:74,2:75,2:76,2:77,2:78,2:79,2:80,2:81,2:82,2:83,2:84,2:85,2:86,2:87,2:88,2:89,2:90,2:91,2:92,2:93,2:94,2:95,2:96,2:97,2:98,2:99,2:100,2:101,2:102,2:103,2:104,2:105,2:106,2:107,2:108,2:109,2:110,2:111,2:112,2:113,2:114,2:115,2:116,2:117,2:118,2:119,2:120,2:121,2:122,2:123,2:124,2:125,2:126,2:127,2:128,2:129,2:130,2:131,2:132,2:133,2:134,2:135,2:136,2:137,2:138,2:139,2:140,2:141,2:142,2:143,2:144,2:145,2:146,2;;;;0,4:1,4:2,4:3,4:4,4:5,4:6,4:7,4:8,4:9,4:10,4:11,4:12,4:13,4:14,4:15,4:16,4:17,4-0;0:::1-"/><Z><S><S T="14" X="2381" Y="932" L="1030" H="130" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="1267" Y="792" L="10" H="10" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="1603" Y="802" L="678" H="35" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2200" Y="995" L="678" H="35" P="0,0,0.3,0.2,36,0,0,0"/><S T="9" X="1137" Y="959" L="1471" H="101" P="0,0,0,0,0,0,0,0" m=""/><S T="9" X="3689" Y="953" L="1671" H="101" P="0,0,0,0,0,0,0,0" m=""/><S T="9" X="3698" Y="920" L="471" H="101" P="0,0,0,0,0,0,0,0" m=""/><S T="12" X="915" Y="890" L="32" H="40" P="0,0,0.3,0.2,0,0,0,0" o="324650" m=""/><S T="12" X="920" Y="899" L="15" H="38" P="0,0,0.3,0.2,90,0,0,0" o="324650" m=""/><S T="14" X="1192" Y="886" L="303" H="53" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="1259" Y="846" L="142" H="44" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="1340" Y="850" L="142" H="16" P="0,0,0.3,0.2,-30,0,0,0"/><S T="14" X="1447" Y="834" L="104" H="16" P="0,0,0.3,0.2,30,0,0,0"/><S T="14" X="1483" Y="856" L="108" H="44" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="1642" Y="856" L="108" H="44" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="1819" Y="856" L="108" H="44" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="1800" Y="828" L="99" H="44" P="0,0,0.3,0.2,30,0,0,0"/><S T="14" X="1680" Y="828" L="99" H="44" P="0,0,0.3,0.2,-30,0,0,0"/><S T="14" X="1519" Y="827" L="99" H="38" P="0,0,0.3,0.2,-30,0,0,0"/><S T="14" X="1608" Y="826" L="99" H="38" P="0,0,0.3,0.2,30,0,0,0"/><S T="14" X="855" Y="763" L="220" H="16" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="1076" Y="749" L="122" H="11" P="0,0,0.3,0.2,33,0,0,0"/><S T="14" X="677" Y="742" L="136" H="56" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="990" Y="739" L="74" H="56" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="742" Y="382" L="301" H="29" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="746" Y="402" L="283" H="26" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="756" Y="423" L="242" H="23" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="784" Y="440" L="149" H="21" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="866" Y="206" L="296" H="10" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="1024" Y="354" L="307" H="10" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="1028" Y="523" L="30" H="15" P="0,0,10,0.2,0,0,0,0"/><S T="14" X="1256" Y="489" L="324" H="38" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="1258" Y="568" L="324" H="38" P="0,0,0.3,0.2,-30,0,0,0"/><S T="14" X="1113" Y="573" L="185" H="38" P="0,0,0.3,0.2,-90,0,0,0"/><S T="14" X="554" Y="437" L="37" H="10" P="0,0,0.3,0.2,-30,0,0,0"/><S T="14" X="560" Y="422" L="37" H="10" P="0,0,0.3,0.2,-70,0,0,0"/><S T="14" X="581" Y="393" L="37" H="10" P="0,0,0.3,0.2,-40,0,0,0"/><S T="14" X="574" Y="451" L="37" H="10" P="0,0,0.3,0.2,-110,0,0,0"/><S T="14" X="574" Y="472" L="37" H="10" P="0,0,0.3,0.2,-90,0,0,0"/><S T="14" X="572" Y="505" L="37" H="10" P="0,0,0.3,0.2,-80,0,0,0"/><S T="14" X="562" Y="535" L="37" H="10" P="0,0,0.3,0.2,-60,0,0,0"/><S T="14" X="547" Y="557" L="37" H="10" P="0,0,0.3,0.2,-40,0,0,0"/><S T="14" X="480" Y="488" L="37" H="10" P="0,0,0.3,0.2,-20,0,0,0"/><S T="14" X="461" Y="482" L="37" H="10" P="0,0,0.3,0.2,40,0,0,0"/><S T="14" X="429" Y="468" L="37" H="10" P="0,0,0.3,0.2,10,0,0,0"/><S T="14" X="529" Y="576" L="37" H="10" P="0,0,0.3,0.2,-60,0,0,0"/><S T="14" X="507" Y="682" L="37" H="10" P="0,0,0.3,0.2,-160,0,0,0"/><S T="14" X="502" Y="667" L="37" H="10" P="0,0,0.3,0.2,-120,0,0,0"/><S T="14" X="476" Y="645" L="37" H="10" P="0,0,0.3,0.2,-160,0,0,0"/><S T="14" X="450" Y="621" L="37" H="10" P="0,0,0.3,0.2,-110,0,0,0"/><S T="14" X="416" Y="592" L="37" H="10" P="0,0,0.3,0.2,-200,0,0,0"/><S T="14" X="437" Y="593" L="20" H="10" P="0,0,0.3,0.2,-130,0,0,0"/><S T="14" X="528" Y="601" L="25" H="10" P="0,0,0.3,0.2,-90,0,0,0"/><S T="14" X="516" Y="601" L="25" H="10" P="0,0,0.3,0.2,-40,0,0,0"/><S T="14" X="406" Y="794" L="26" H="481" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="1869" Y="1013" L="26" H="3000" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="3009" Y="1013" L="26" H="3000" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="430" Y="927" L="25" H="60" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="401" Y="476" L="43" H="159" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="387" Y="298" L="24" H="260" P="0,0,0,0,0,0,0,0"/><S T="14" X="702" Y="891" L="146" H="41" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="616" Y="902" L="55" H="13" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="614" Y="887" L="38" H="13" P="0,0,0.3,0.2,-30,0,0,0"/><S T="14" X="2400" Y="853" L="72" H="37" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2326" Y="866" L="90" H="10" P="0,0,0.3,0.2,-30,0,0,0"/><S T="14" X="2472" Y="864" L="90" H="10" P="0,0,0.3,0.2,30,0,0,0"/><S T="14" X="2161" Y="753" L="240" H="10" P="0,0,0.3,0.2,30,0,0,0"/><S T="14" X="2066" Y="637" L="53" H="16" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2738" Y="637" L="53" H="16" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2047" Y="555" L="421" H="16" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="2757" Y="555" L="421" H="16" P="0,0,0.3,0.2,-90,0,0,0"/><S T="14" X="2188" Y="606" L="35" H="12" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2603" Y="606" L="35" H="12" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2200" Y="592" L="35" H="12" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="2591" Y="592" L="35" H="12" P="0,0,0.3,0.2,-90,0,0,0"/><S T="14" X="2394" Y="572" L="396" H="10" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2447" Y="681" L="630" H="10" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2082" Y="272" L="163" H="95" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2715" Y="272" L="163" H="95" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2085" Y="325" L="135" H="17" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2718" Y="325" L="135" H="17" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2079" Y="338" L="105" H="15" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2712" Y="338" L="105" H="15" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2405" Y="413" L="532" H="15" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2272" Y="388" L="60" H="31" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2405" Y="388" L="60" H="31" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2533" Y="388" L="60" H="31" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3436" Y="873" L="149" H="75" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3456" Y="744" L="193" H="41" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="3388" Y="655" L="162" H="14" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3535" Y="684" L="140" H="14" P="0,0,0.3,0.2,25,0,0,0"/><S T="14" X="3786" Y="637" L="114" H="14" P="0,0,0.3,0.2,92,0,0,0"/><S T="14" X="3678" Y="737" L="242" H="14" P="0,0,0.3,0.2,-25,0,0,0"/><S T="14" X="3594" Y="859" L="15" H="15" P="0,0,0.3,0.2,-5,0,0,0"/><S T="14" X="3713" Y="855" L="15" H="15" P="0,0,0.3,0.2,5,0,0,0"/><S T="14" X="3830" Y="857" L="15" H="15" P="0,0,0.3,0.2,5,0,0,0"/><S T="14" X="3917" Y="833" L="15" H="15" P="0,0,0.3,0.2,15,0,0,0"/><S T="14" X="3832" Y="801" L="15" H="15" P="0,0,0.3,0.2,-15,0,0,0"/><S T="14" X="3760" Y="768" L="15" H="15" P="0,0,0.3,0.2,5,0,0,0"/><S T="14" X="3840" Y="729" L="15" H="15" P="0,0,0.3,0.2,5,0,0,0"/><S T="14" X="4108" Y="491" L="10" H="10" P="0,0,0.3,0.2,5,0,0,0"/><S T="14" X="4248" Y="491" L="10" H="10" P="0,0,0.3,0.2,5,0,0,0"/><S T="14" X="3945" Y="724" L="73" H="28" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3946" Y="826" L="25" H="167" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="4018" Y="904" L="25" H="156" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="4161" Y="726" L="25" H="145" P="0,0,0.3,0.2,80,0,0,0"/><S T="4" X="4302" Y="667" L="12" H="105" P="0,0,20,0.2,0,0,0,0" m=""/><S T="4" X="4302" Y="730" L="10" H="10" P="0,0,20,0.2,0,0,0,0" m=""/><S T="4" X="4286" Y="644" L="10" H="10" P="0,0,20,0.2,0,0,0,0" m=""/><S T="14" X="4371" Y="693" L="59" H="10" P="0,0,0.3,0.2,-10,0,0,0"/><S T="14" X="2857" Y="573" L="10" H="488" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2898" Y="301" L="25" H="10" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="2873" Y="316" L="25" H="10" P="0,0,0.3,0.2,-40,0,0,0"/><S T="14" X="3110" Y="315" L="25" H="10" P="0,0,0.3,0.2,30,0,0,0"/><S T="14" X="3078" Y="302" L="15" H="10" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3263" Y="329" L="260" H="10" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3294" Y="398" L="198" H="10" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3370" Y="365" L="52" H="67" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3419" Y="405" L="117" H="29" P="0,0,0.3,0.2,30,0,0,0"/><S T="14" X="3705" Y="434" L="158" H="31" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="4006" Y="370" L="576" H="31" P="0,0,0.3,0.2,180,0,0,0"/><S T="14" X="4093" Y="595" L="606" H="31" P="0,0,0.3,0.2,180,0,0,0"/><S T="14" X="4488" Y="417" L="576" H="31" P="0,0,0.3,0.2,140,0,0,0"/><S T="14" X="4394" Y="355" L="270" H="31" P="0,0,0.3,0.2,270,0,0,0"/><S T="14" X="4416" Y="762" L="3000" H="31" P="0,0,0,0.2,270,0,0,0"/><S T="14" X="3455" Y="501" L="157" H="39" P="0,0,0.3,0.2,90,0,0,0"/><S T="14" X="3584" Y="547" L="273" H="60" P="0,0,0.3,0.2,180,0,0,0"/><S T="14" X="3373" Y="415" L="117" H="10" P="0,0,0.3,0.2,20,0,0,0"/><S T="14" X="3419" Y="444" L="117" H="10" P="0,0,0.3,0.2,40,0,0,0"/><S T="14" X="3432" Y="460" L="117" H="10" P="0,0,0.3,0.2,70,0,0,0"/><S T="14" X="3822" Y="572" L="19" H="11" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3875" Y="565" L="79" H="29" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3930" Y="568" L="43" H="25" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3897" Y="539" L="46" H="21" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="3963" Y="526" L="111" H="19" P="0,0,0.3,0.2,-20,0,0,0"/><S T="14" X="2939" Y="395" L="158" H="11" P="0,0,0.3,0.2,0,0,0,0"/><S T="9" X="848" Y="745" L="210" H="45" P="0,0,0,0,0,0,0,0" m=""/><S T="9" X="3583" Y="479" L="216" H="81" P="0,0,0,0,0,0,0,0" m=""/><S T="9" X="4338" Y="369" L="102" H="28" P="0,0,0,0,0,0,0,0" m=""/><S T="9" X="4397" Y="743" L="35" H="324" P="0,0,0,0,0,0,0,0" m=""/><S T="2" X="986" Y="1007" L="74" H="20" P="0,0,0,1.2,0,0,0,0" m=""/><S T="12" X="200" Y="600" L="400" H="1200" P="0,0,0.3,0.2,0,0,0,0" o="000000" N=""/><S T="12" X="1880" Y="100" L="200" H="3000" P="0,0,0.3,0.2,90,0,0,0" o="000000" N=""/><S T="12" X="1880" Y="1100" L="200" H="3000" P="0,0,0.3,0.2,90,0,0,0" o="000000" N=""/><S T="12" X="2940" Y="100" L="200" H="3000" P="0,0,0.3,0.2,90,0,0,0" o="000000" N=""/><S T="12" X="2920" Y="1100" L="200" H="3000" P="0,0,0.3,0.2,90,0,0,0" o="000000" N=""/><S T="12" X="4600" Y="600" L="400" H="1200" P="0,0,0.3,0.2,0,0,0,0" o="000000" N=""/></S><D/><O/><L/></Z></C>]])
+tfm.exec.setUIMapName("Treasures Hunter")
+tfm.exec.setGameTime(300,true)
+tfm.exec.setNameColor("wizardamani0#6277",0xFF7800)
+a = math.random(1,11)
+tfm.exec.addImage("17b6ddc60cb.png", "!1", 1905, 940, nil)
+b = 1000
+end  
+end
+ui.addTextArea(40,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,900,260, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(30,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,340,900,300, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(20,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,400,660, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(10,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,540,-80,400,660, 0x000000, 0xff0000,0,true,false)
+function eventTextAreaCallback(id,name,event)
+if event == "win" then
+ui.addTextArea(1, "<font size='30' color = '#ffffff'><b><p align = 'center'><VI>"..name.." found the treasure", nil, 0, 80, 800, 400, 0x010101, 0x010101, 0, true,false)
+ui.addTextArea(-1, "<font size='10' color = '#ffffff'><b><p align = 'center'>\nPrevious Round Winner is <VI>"..name.."", nil, 500, 10, 280, 30, 0x010101, 0x010101, 1, true,false)
+tfm.exec.setGameTime(6,true)
+tfm.exec.removeImage(t1)
+b = 0
+ui.addTextArea(60,"<font size='30' color = '#3172DE'><b><p align = 'center'>"..text.found,name,40,40,720,340, 0x174E56, 0x000000,1,true,false)
+ui.addTextArea(61,"<font size='15' color = '#000000'><b><p align = 'center'>"..text.namecolor,name,80,100,170,120, 0x174E56, 0x000000,1,true,false)
+ui.addTextArea(62,"<font size='1000' color = '#3172DE'><a href='event:c1'> </a>",name,90,140,30,30, 0x000FF0, 0x000000,1,true,false)
+ui.addTextArea(63,"<font size='1000' color = '#3172DE'><a href='event:c2'> </a>",name,90,180,30,30, 0xFF0000, 0x000000,1,true,false)
+ui.addTextArea(64,"<font size='1000' color = '#3172DE'><a href='event:c3'> </a>",name,130,140,30,30, 0x0FF000, 0x000000,1,true,false)
+ui.addTextArea(65,"<font size='1000' color = '#3172DE'><a href='event:c4'> </a>",name,130,180,30,30, 0x00d0dd, 0x000000,1,true,false)
+ui.addTextArea(66,"<font size='1000' color = '#3172DE'><a href='event:c5'> </a>",name,170,140,30,30, 0xFF00FF, 0x000000,1,true,false)
+ui.addTextArea(67,"<font size='1000' color = '#3172DE'><a href='event:c6'> </a>",name,170,180,30,30, 0xE2FF00, 0x000000,1,true,false)
+ui.addTextArea(68,"<font size='1000' color = '#3172DE'><a href='event:c7'> </a>",name,210,140,30,30, 0x010101, 0x000000,1,true,false)
+ui.addTextArea(69,"<font size='1000' color = '#3172DE'><a href='event:c8'> </a>",name,210,180,30,30, 0xFFFFFF, 0x000000,1,true,false)
+ui.addTextArea(70,"<font size='15' color = '#000000'><b><p align = 'center'>"..text.vampire,name,280,100,220,120, 0x174E56, 0x000000,1,true,false)
+ui.addTextArea(71,"<font size='15' color = '#000000'><a href='event:V'>"..text.choose,name,370,180,40,28, 0xFFFFFF, 0x000000,1,true,false)
+ui.addTextArea(72,"<font size='15' color = '#000000'><b><p align = 'center'>"..text.meepall,name,530,100,190,120, 0x174E56, 0x000000,1,true,false)
+ui.addTextArea(73,"<font size='15' color = '#000000'><a href='event:T'>"..text.choose,name,610,180,40,28, 0xFFFFFF, 0x000000,1,true,false)
+ui.addTextArea(74,"<font size='15' color = '#000000'><b><p align = 'center'>"..text.lazer,name,80,240,220,120, 0x174E56, 0x000000,1,true,false)
+ui.addTextArea(75,"<font size='15' color = '#000000'><a href='event:LAZERON'>"..text.choose,name,170,320,40,28, 0xFFFFFF, 0x000000,1,true,false)
+ui.addTextArea(77,"<font size='15' color = '#000000'><b><p align = 'center'>"..text.trap,name,320,240,200,120, 0x174E56, 0x000000,1,true,false)
+ui.addTextArea(78,"<font size='15' color = '#000000'><a href='event:trap'>"..text.choose,name,400,325,40,28, 0xFFFFFF, 0x000000,1,true,false)
+end 
+if event == "c1" then
+ui.addTextArea(162,"<font size='1000' color = '#3172DE'><a href='event:c1f'> </a>",name,390,280,20,20, 0x000FF0, 0x000000,1,true,false)
+ui.removeTextArea(60)
+ui.removeTextArea(61)
+ui.removeTextArea(62)
+ui.removeTextArea(63)
+ui.removeTextArea(64)
+ui.removeTextArea(65)
+ui.removeTextArea(72)
+ui.removeTextArea(73)
+ui.removeTextArea(66)
+ui.removeTextArea(70)
+ui.removeTextArea(71)
+ui.removeTextArea(67)
+ui.removeTextArea(68)
+ui.removeTextArea(69)
+ui.removeTextArea(74)
+ui.removeTextArea(75)
+ui.removeTextArea(76)
+ui.removeTextArea(77)
+ui.removeTextArea(78)
+ui.addTextArea(40,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,900,260, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(30,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,340,900,300, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(20,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,400,660, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(10,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,540,-80,400,660, 0x000000, 0xff0000,0,true,false)
+end 
+if event == "c2" then
+ui.addTextArea(162,"<font size='1000' color = '#3172DE'><a href='event:c2f'> </a>",name,390,280,20,20, 0xFF0000, 0x000000,1,true,false)
+ui.removeTextArea(60)
+ui.removeTextArea(61)
+ui.removeTextArea(70)
+ui.removeTextArea(71)
+ui.removeTextArea(62)
+ui.removeTextArea(63)
+ui.removeTextArea(64)
+ui.removeTextArea(65)
+ui.removeTextArea(74)
+ui.removeTextArea(75)
+ui.removeTextArea(76)
+ui.removeTextArea(77)
+ui.removeTextArea(78)
+ui.removeTextArea(66)
+ui.removeTextArea(72)
+ui.removeTextArea(73)
+ui.removeTextArea(67)
+ui.removeTextArea(68)
+ui.removeTextArea(69)
+ui.addTextArea(40,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,900,260, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(30,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,340,900,300, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(20,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,400,660, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(10,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,540,-80,400,660, 0x000000, 0xff0000,0,true,false)
+end 
+if event == "c3" then
+ui.addTextArea(162,"<font size='1000' color = '#3172DE'><a href='event:c3f'> </a>",name,390,280,20,20, 0x0FF000, 0x000000,1,true,false)
+ui.removeTextArea(60)
+ui.removeTextArea(61)
+ui.removeTextArea(62)
+ui.removeTextArea(63)
+ui.removeTextArea(64)
+ui.removeTextArea(65)
+ui.removeTextArea(66)
+ui.removeTextArea(74)
+ui.removeTextArea(75)
+ui.removeTextArea(76)
+ui.removeTextArea(77)
+ui.removeTextArea(78)
+ui.removeTextArea(70)
+ui.removeTextArea(71)
+ui.removeTextArea(72)
+ui.removeTextArea(73)
+ui.removeTextArea(67)
+ui.removeTextArea(68)
+ui.removeTextArea(69)
+ui.addTextArea(40,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,900,260, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(30,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,340,900,300, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(20,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,400,660, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(10,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,540,-80,400,660, 0x000000, 0xff0000,0,true,false)
+end 
+if event == "c4" then
+ui.addTextArea(162,"<font size='1000' color = '#3172DE'><a href='event:c4f'> </a>",name,390,280,20,20, 0x00d0dd, 0x000000,1,true,false)
+ui.removeTextArea(60)
+ui.removeTextArea(61)
+ui.removeTextArea(62)
+ui.removeTextArea(63)
+ui.removeTextArea(64)
+ui.removeTextArea(65)
+ui.removeTextArea(66)
+ui.removeTextArea(74)
+ui.removeTextArea(75)
+ui.removeTextArea(76)
+ui.removeTextArea(77)
+ui.removeTextArea(78)
+ui.removeTextArea(67)
+ui.removeTextArea(70)
+ui.removeTextArea(71)
+ui.removeTextArea(68)
+ui.removeTextArea(72)
+ui.removeTextArea(73)
+ui.removeTextArea(69)
+ui.addTextArea(40,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,900,260, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(30,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,340,900,300, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(20,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,400,660, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(10,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,540,-80,400,660, 0x000000, 0xff0000,0,true,false)
+end 
+if event == "c5" then
+ui.addTextArea(162,"<font size='1000' color = '#3172DE'><a href='event:c5f'> </a>",name,390,280,20,20, 0xFF00FF, 0x000000,1,true,false)
+ui.removeTextArea(60)
+ui.removeTextArea(61)
+ui.removeTextArea(62)
+ui.removeTextArea(63)
+ui.removeTextArea(64)
+ui.removeTextArea(65)
+ui.removeTextArea(66)
+ui.removeTextArea(74)
+ui.removeTextArea(75)
+ui.removeTextArea(76)
+ui.removeTextArea(77)
+ui.removeTextArea(78)
+ui.removeTextArea(67)
+ui.removeTextArea(70)
+ui.removeTextArea(71)
+ui.removeTextArea(68)
+ui.removeTextArea(72)
+ui.removeTextArea(73)
+ui.removeTextArea(69)
+ui.addTextArea(40,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,900,260, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(30,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,340,900,300, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(20,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,400,660, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(10,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,540,-80,400,660, 0x000000, 0xff0000,0,true,false)
+end 
+if event == "c6" then
+ui.addTextArea(162,"<font size='1000' color = '#3172DE'><a href='event:c6f'> </a>",name,390,280,20,20, 0xE2FF00, 0x000000,1,true,false)
+ui.removeTextArea(60)
+ui.removeTextArea(61)
+ui.removeTextArea(62)
+ui.removeTextArea(63)
+ui.removeTextArea(64)
+ui.removeTextArea(74)
+ui.removeTextArea(75)
+ui.removeTextArea(76)
+ui.removeTextArea(77)
+ui.removeTextArea(78)
+ui.removeTextArea(70)
+ui.removeTextArea(71)
+ui.removeTextArea(65)
+ui.removeTextArea(72)
+ui.removeTextArea(73)
+ui.removeTextArea(66)
+ui.removeTextArea(67)
+ui.removeTextArea(68)
+ui.removeTextArea(69)
+ui.addTextArea(40,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,900,260, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(30,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,340,900,300, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(20,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,400,660, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(10,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,540,-80,400,660, 0x000000, 0xff0000,0,true,false)
+end 
+if event == "c7" then
+ui.addTextArea(162,"<font size='1000' color = '#3172DE'><a href='event:c7f'> </a>",name,390,280,20,20, 0x010101, 0x000000,1,true,false)
+ui.removeTextArea(60)
+ui.removeTextArea(61)
+ui.removeTextArea(62)
+ui.removeTextArea(63)
+ui.removeTextArea(64)
+ui.removeTextArea(65)
+ui.removeTextArea(66)
+ui.removeTextArea(74)
+ui.removeTextArea(75)
+ui.removeTextArea(76)
+ui.removeTextArea(77)
+ui.removeTextArea(78)
+ui.removeTextArea(67)
+ui.removeTextArea(72)
+ui.removeTextArea(73)
+ui.removeTextArea(68)
+ui.removeTextArea(70)
+ui.removeTextArea(71)
+ui.removeTextArea(69)
+ui.addTextArea(40,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,900,260, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(30,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,340,900,300, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(20,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,400,660, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(10,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,540,-80,400,660, 0x000000, 0xff0000,0,true,false)
+end 
+if event == "c8" then
+ui.addTextArea(162,"<font size='1000' color = '#3172DE'><a href='event:c8f'> </a>",name,390,280,20,20, 0xFFFFFF, 0x000000,1,true,false)
+ui.removeTextArea(60)
+ui.removeTextArea(61)
+ui.removeTextArea(62)
+ui.removeTextArea(63)
+ui.removeTextArea(64)
+ui.removeTextArea(65)
+ui.removeTextArea(66)
+ui.removeTextArea(67)
+ui.removeTextArea(72)
+ui.removeTextArea(73)
+ui.removeTextArea(68)
+ui.removeTextArea(74)
+ui.removeTextArea(75)
+ui.removeTextArea(76)
+ui.removeTextArea(77)
+ui.removeTextArea(78)
+ui.removeTextArea(69)
+ui.removeTextArea(70)
+ui.removeTextArea(71)
+ui.addTextArea(40,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,900,260, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(30,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,340,900,300, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(20,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,400,660, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(10,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,540,-80,400,660, 0x000000, 0xff0000,0,true,false)
+end 
+if event == "c1f" then
+tfm.exec.setNameColor(name,0x000FF0)
+end 
+if event == "c2f" then
+tfm.exec.setNameColor(name,0xFF0000)
+end 
+if event == "c3f" then
+tfm.exec.setNameColor(name,0x0FF000)
+end 
+if event == "c4f" then
+tfm.exec.setNameColor(name,0x00d0dd)
+end 
+if event == "c5f" then
+tfm.exec.setNameColor(name,0xFF00FF)
+end 
+if event == "c6f" then
+tfm.exec.setNameColor(name,0xE2FF00)
+end 
+if event == "c7f" then
+tfm.exec.setNameColor(name,0x010101)
+end 
+if event == "c8f" then
+tfm.exec.setNameColor(name,0xFFFFFF)
+end 
+if event == "S0" then
+ui.addTextArea(888,"<font size='15' color = '#000000'><b><p align = 'center'>"..text.help,name,160,100,480,200, 0x174E56, 0x000000,1,true,false)
+ui.addTextArea(880,"<font size='12' color = '#000000'><a href='event:S1'>اغلاق</a>",name,380,238,34,18, 0xFFFFFF, 0x000000,1,true,false)
+end 
+if event == "S1" then
+ui.removeTextArea(888)
+ui.removeTextArea(880)
+end 
+if event == "V" then
+tfm.exec.setVampirePlayer(name)
+ui.removeTextArea(60)
+ui.removeTextArea(61)
+ui.removeTextArea(62)
+ui.removeTextArea(63)
+ui.removeTextArea(64)
+ui.removeTextArea(65)
+ui.removeTextArea(66)
+ui.removeTextArea(67)
+ui.removeTextArea(72)
+ui.removeTextArea(73)
+ui.removeTextArea(68)
+ui.removeTextArea(69)
+ui.removeTextArea(70)
+ui.removeTextArea(74)
+ui.removeTextArea(75)
+ui.removeTextArea(76)
+ui.removeTextArea(77)
+ui.removeTextArea(78)
+ui.removeTextArea(71)
+ui.addTextArea(40,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,900,260, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(30,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,340,900,300, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(20,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,400,660, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(10,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,540,-80,400,660, 0x000000, 0xff0000,0,true,false)
+end 
+if event == "T" then
+ui.addTextArea(558,"<font size='10' color = '#3172DE'><a href='event:meep'>meep</a>",nil,345,280,40,18, 0xFFFFFF, 0x000000,1,true,false)
+ui.removeTextArea(60)
+ui.removeTextArea(61)
+ui.removeTextArea(62)
+ui.removeTextArea(63)
+ui.removeTextArea(64)
+ui.removeTextArea(65)
+ui.removeTextArea(66)
+ui.removeTextArea(67)
+ui.removeTextArea(68)
+ui.removeTextArea(69)
+ui.removeTextArea(70)
+ui.removeTextArea(71)
+ui.removeTextArea(72)
+ui.removeTextArea(73)
+ui.removeTextArea(74)
+ui.removeTextArea(75)
+ui.removeTextArea(76)
+ui.removeTextArea(77)
+ui.removeTextArea(78)
+ui.addTextArea(40,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,900,260, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(30,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,340,900,300, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(20,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,400,660, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(10,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,540,-80,400,660, 0x000000, 0xff0000,0,true,false)
+end 
+if event == "meep" then
+tfm.exec.giveMeep(name)
+ui.removeTextArea(558,name)
+end 
+if event == "sec2" then
+ui.addTextArea(555,"<font size='9' color = '#3172DE'><a href='event:sc2'>cheese</a>",name,418,280,35,18, 0xFFFFFF, 0x000000,1,true,false)
+end
+if event == "sc2" then
+tfm.exec.removeImage(SEC1[name])
+tfm.exec.removeImage(SEC2[name])
+tfm.exec.removeImage(SEC3[name])
+SEC2[name] = tfm.exec.addImage("17b7ce8eb4d.png","$" .. name, -60, -110, nil)
+end
+if event == "LAZERON" then
+ui.removeTextArea(60)
+ui.removeTextArea(61)
+ui.removeTextArea(62)
+ui.removeTextArea(63)
+ui.removeTextArea(64)
+ui.removeTextArea(65)
+ui.removeTextArea(66)
+ui.removeTextArea(67)
+ui.removeTextArea(72)
+ui.removeTextArea(73)
+ui.removeTextArea(68)
+ui.removeTextArea(69)
+ui.removeTextArea(70)
+ui.removeTextArea(74)
+ui.removeTextArea(75)
+ui.removeTextArea(76)
+ui.removeTextArea(77)
+ui.removeTextArea(78)
+ui.removeTextArea(71)
+ui.removeTextArea(10,name)
+ui.removeTextArea(20,name)
+ui.removeTextArea(30,name)
+ui.removeTextArea(40,name)
+ui.addTextArea(771,"<font size='12' color = '#000000'><a href='event:LAZER1'>shoot\n here</a>",name,1520,680,44,35, 0xFF0000, 0x000000,1)
+ui.addTextArea(772,"<font size='12' color = '#000000'><a href='event:LAZER2'>shoot\n here</a>",name,1720,680,44,35, 0xFF0000, 0x000000,1)
+end 
+if event == "LAZER1" then
+L = 0
+ui.addTextArea(40,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,900,260, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(30,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,340,900,300, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(20,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,400,660, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(10,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,540,-80,400,660, 0x000000, 0xff0000,0,true,false)
+end
+if event == "LAZER2" then
+R = 0
+ui.addTextArea(40,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,900,260, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(30,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,340,900,300, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(20,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,400,660, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(10,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,540,-80,400,660, 0x000000, 0xff0000,0,true,false)
+end
+if event == "trap" then
+t = 60
+ui.removeTextArea(60)
+ui.removeTextArea(61)
+ui.removeTextArea(62)
+ui.removeTextArea(63)
+ui.removeTextArea(64)
+ui.removeTextArea(65)
+ui.removeTextArea(72)
+ui.removeTextArea(73)
+ui.removeTextArea(66)
+ui.removeTextArea(70)
+ui.removeTextArea(71)
+ui.removeTextArea(67)
+ui.removeTextArea(68)
+ui.removeTextArea(69)
+ui.removeTextArea(74)
+ui.removeTextArea(75)
+ui.removeTextArea(76)
+ui.removeTextArea(77)
+ui.removeTextArea(78)
+ui.addTextArea(40,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,900,260, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(30,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,340,900,300, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(20,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,-80,-80,400,660, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(10,"<font size='30' color = '#3172DE'><a win='event:2'> </a>",nil,540,-80,400,660, 0x000000, 0xff0000,0,true,false)
+ui.addTextArea(120,"<font size='1000' color = '#3172DE'><a lol='event:trap'> </a>",name,340,240,30,25, 0x0FF000, 0x000000,0.5,true,false)
+for name,player in pairs(tfm.get.room.playerList) do
+tfm.exec.bindKeyboard(name, 70, true, true)
+end
+end 
+end
+function eventKeyboard(name, key, down, x, y)
+if key == 70 then
+tfm.exec.addPhysicObject(3,x-45,y+10,{
+type=19,
+restitution=0.2,
+friction=0.3,
+width=20,
+height=20,
+groundCollision=true
+})
+t1 = tfm.exec.addImage("17b6004c6db.png", "!1", x-65, y-10, nil)
+end 
+if key == 70 then
+ui.removeTextArea(120)
+tfm.exec.bindKeyboard(name, 70, true, false)
+end
+end
