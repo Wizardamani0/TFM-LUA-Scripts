@@ -1,3 +1,9 @@
+-- Don't press the button! By WIZ --
+
+-- (For Tribe)     <--
+-- (For Funcorps)  <--
+
+
 function eventMainMap()
 tfm.exec.disableAutoShaman(true)
 tfm.exec.disableAllShamanSkills(true)
