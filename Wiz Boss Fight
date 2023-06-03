@@ -1,0 +1,1774 @@
+-- Wiz Boss Fight by WIZ --
+
+
+-- Boss Health --
+BHP = 10
+-- Boss Health --
+
+
+tfm.exec.disableAutoShaman(true)
+tfm.exec.disableAfkDeath(true)
+tfm.exec.disableAutoNewGame(true)
+tfm.exec.disablePhysicalConsumables(true)
+tfm.exec.disableDebugCommand(true)
+tfm.exec.disableMortCommand(true)
+tfm.exec.disableAutoScore(true)
+
+tfm.exec.newGame([[<C><P Ca="" MEDATA=";;;;-0;0::0,1,2,3,4,5,6,7,8:1-"/><Z><S><S T="13" X="100" Y="360" L="80" P="0,0,0.3,0.2,0,0,0,0" o="000000" N=""/><S T="13" X="700" Y="360" L="80" P="0,0,0.3,0.2,0,0,0,0" o="000000" N=""/><S T="12" X="750" Y="110" L="100" H="600" P="0,0,0,0,0,0,0,0" o="324650" N="" m=""/><S T="12" X="50" Y="110" L="100" H="600" P="0,0,0,0,0,0,0,0" o="324650" N="" m=""/><S T="12" X="400" Y="310" L="100" H="600" P="0,0,0.3,0.2,-90,0,0,0" o="324650" N="" m=""/></S><D><DS X="402" Y="245"/></D><O/><L><JD c="424242,250,1,0" P1="220,438.33" P2="220,-640"/><JD c="424242,250,1,0" P1="580,438.33" P2="580,-640"/><JD c="424242,250,1,0" P1="400,438.33" P2="400,-640"/><JD c="7C7C7C,121,1,0" P1="301,260" P2="501,260"/><JD c="A7A7A7,85,1,0" P1="331,260" P2="471,260"/><JD c="000000,200,1,1" P1="0,460" P2="800,460"/><JD c="000000,200,1,1" P1="0,560" P2="0,-785"/><JD c="000000,200,1,1" P1="800,560" P2="800,-785"/><JD c="B9B9B9,58,1,0" P1="351,260" P2="451,260"/></L></Z></C>]])
+tfm.exec.setRoomMaxPlayers(50)
+
+tfm.exec.playSound("cite18/musique/esprit2.mp3", 1)
+tfm.exec.playSound("cite18/musique/esprit1.mp3", 1)
+--
+HP = {}
+H1 = {}
+H2 = {}
+H3 = {}
+H4 = {}
+DED = {}
+BHPT = "<A:ACTIVE>HP<N2>:<R> ••<fc>••<D>••<T>••<VP>••"
+RN = "MOUSETALE <ch>[Beta]:<vi> Wizard-BOSS     "
+tfm.exec.setUIMapName(RN..BHPT)
+volume = 100
+WBFON = 0
+fly = 0
+ActFightTime = 0
+AFT = 0
+bn = 1000
+sn = 20000
+T = 0
+Ttxt = 0
+PT = 0
+PID = 10000
+LRa1 = 0
+LRa2 = 0
+
+LT1 = 0
+LT2 = 0
+
+LT3 = 0
+LT4 = 0
+
+LC1 ={X = 400,Y = 200}
+LC2 ={X = 400,Y = 200}
+
+LC3 ={X = 400,Y = 200,VX = 50,VY = -50,T = 6}
+LC4 ={X = 400,Y = 200,VX = 50,VY = -50,T = 6}
+
+k0 = {}
+k1 = {}
+k2 = {}
+k3 = {}
+
+k5 = {}
+
+--
+otimeer = 170
+text1 = 0
+spiks5spawns = 0
+spiksXspawns = 0
+spiksXboost = 0
+lazer1Xspawns = 0
+lazer2Xspawns = 0
+BXspawns = 0
+BXR = 10
+lazer3Xspawns = 0
+lazer4Xspawns = 0
+cube1 = 0
+cube0spiks = 0
+planks1 = 0
+purp1 = 0
+
+fight = 0
+act = 0
+
+BR ={S = -100,T = 2}
+BL ={S = 100,T = 2}
+BL1 = 0
+BL2 = 0
+BL3 = 0
+BR1 = 0
+BR2 = 0
+BR3 = 0
+Map = 0
+--
+prpl = 0
+Mimg1 = "183b805a64d.png"
+Mimg2 = "183b7b7789f.png"
+Mimg3 = "183bd8fa1f8.png"
+Mimg = 0
+MimgO = 0
+--
+
+function eventTextAreaCallback(id,name,event)
+if event == "music" then
+tfm.exec.setRoomPassword("LockedRoom")
+WBFON = 1
+tfm.exec.setUIMapName(RN..BHPT)
+Mimg = 1
+cube1 = 1
+fly = 1
+text1 = 1
+Map = 1
+ui.removeTextArea(1)
+tfm.exec.disableAutoShaman(true)
+tfm.exec.disableAfkDeath(true)
+tfm.exec.disableAutoNewGame(true)
+tfm.exec.disablePhysicalConsumables(true)
+tfm.exec.disableDebugCommand(true)
+tfm.exec.disableMortCommand(true)
+tfm.exec.disableAutoScore(true)
+
+tfm.exec.newGame([[<C><P G="0,0" Ca="" MEDATA=";;;;-0;0:::1-"/><Z><S><S T="12" X="400" Y="200" L="800" H="400" P="0,0,0.3,0.2,0,0,0,0" o="000000" c="4"/><S T="1" X="393" Y="-113" L="22" H="20" P="0,0,0,1,108,0,0,0"/><S T="1" X="385" Y="-101" L="22" H="20" P="0,0,0,1,144,0,0,0"/><S T="1" X="371" Y="-97" L="22" H="20" P="0,0,0,1,180,0,0,0"/><S T="1" X="358" Y="-101" L="22" H="20" P="0,0,0,1,-144,0,0,0"/><S T="1" X="349" Y="-113" L="22" H="20" P="0,0,0,1,-108,0,0,0"/><S T="1" X="349" Y="-127" L="22" H="20" P="0,0,0,1,-72,0,0,0"/><S T="1" X="358" Y="-138" L="22" H="20" P="0,0,0,1,-36,0,0,0"/><S T="1" X="371" Y="-143" L="22" H="20" P="0,0,0,1,0,0,0,0"/><S T="1" X="385" Y="-138" L="22" H="20" P="0,0,0,1,36,0,0,0"/><S T="1" X="393" Y="-127" L="22" H="20" P="0,0,0,1,72,0,0,0"/></S><D><DS X="400" Y="305"/></D><O/><L/></Z></C>]])
+
+tfm.exec.setWorldGravity(0, 10)
+
+if BHP > 10 then
+BHP = 10
+end
+if BHP < 5 then
+BHP = 5
+end
+
+    for name in next, tfm.get.room.playerList do
+     DED[name] = 1
+    H1[name] = tfm.exec.addImage("18361b61f3c.png","%"..name,-12,-12,name)
+    H2[name] = tfm.exec.addImage("18361b61f3c.png","%"..name,-12,-12,nil,1,1,0,0.2)
+    tfm.exec.changePlayerSize(name, 0.6)
+    tfm.exec.setPlayerGravityScale(name, 0, 0)
+    system.bindKeyboard(name, 0, false, true)
+    system.bindKeyboard(name, 1, false, true)
+    system.bindKeyboard(name, 2, false, true)
+    system.bindKeyboard(name, 3, false, true)
+    system.bindKeyboard(name, 0, true, true)
+    system.bindKeyboard(name, 1, true, true)
+    system.bindKeyboard(name, 2, true, true)
+    system.bindKeyboard(name, 3, true, true)
+    tfm.exec.freezePlayer(name, true, false)
+    HP[name] = 20
+ui.addTextArea(1,"<font size='30' color = '#ff0000'><a hrf='event:music'><A:ACTIVE>HP:<n>         "..HP[name].."/20",name,0,20,220,40, 0xffffff, 0x000000,0,true)
+ui.addTextArea(2,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,60,25,60,30, 0xFF0000, 0xFF0000,1,true)
+ui.addTextArea(3,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,60,25,HP[name] * 3,30, 0xFFFF00, 0xFFFF00,1,true)
+ui.addTextArea(4,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,53,10,70,20, 0x000001, 0x000001,1,true)
+ui.addTextArea(5,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,53,55,70,20, 0x000001, 0x000001,1,true)
+end
+end
+end
+tfm.exec.chatMessage("\n<Rose>•Welcome to MouseTale•\n\n<v>•If you start playing you will be fighting •Wizard-Amani-Zero• and he's hard to beat.\n\nThis mini-game made by <ch>Wizardamani0#6277\n<v>this is just a Preview to show how the real module will look like.", nil)
+function eventNewPlayer(name)
+tfm.exec.chatMessage("\n<Rose>•Welcome to MouseTale•\n\n<v>•If you start playing you will be fighting •Wizard-Amani-Zero• and he's hard to beat.\n\nThis mini-game made by <ch>Wizardamani0#6277\n<v>this is just a Preview to show how the real module will look like.", name)
+if Map == 0 then
+tfm.exec.respawnPlayer(name)
+end
+DED[name] = 0
+end
+function eventKeyboard(name, key, down, x, y)
+if fly == 1 then
+if key == 0 then
+tfm.exec.movePlayer(name, 0, 0, false, -50, 0, true)
+k0[name] = 1
+end
+if key == 0 and down == false then
+tfm.exec.movePlayer(name, 0, 0, true, 100, 0, true)
+k0[name] = 0
+end
+if key == 2 then
+tfm.exec.movePlayer(name, 0, 0, false, 50, 0, true)
+k2[name] = 1
+end
+if key == 2 and down == false then
+tfm.exec.movePlayer(name, 0, 0, true, -100, 0, true)
+k2[name] = 0
+end
+if key == 1 then
+tfm.exec.movePlayer(name, 0, 0, false, 0, -50, true)
+k1[name] = 1
+end
+if key == 1 and down == false then
+tfm.exec.movePlayer(name, 0, 0, true, 0, 100, true)
+k1[name] = 0
+end
+if key == 3 then
+tfm.exec.movePlayer(name, 0, 0, false, 0, 50, true)
+k3[name] = 1
+end
+if key == 3 and down == false then
+tfm.exec.movePlayer(name, 0, 0, true, 0, -100, true)
+k3[name] = 0
+end
+
+if k3[name] == 0 and k2[name] == 0 and k1[name] == 0 and k0[name] == 0 then
+tfm.exec.movePlayer(name, 0, 0, false, 1, 1, fale)
+tfm.exec.movePlayer(name, 0, 0, false, -1, -1, true)
+end
+end
+if prpl == 1 then
+
+if key == 3 and k5[name] == 2 then
+ tfm.exec.movePlayer(name,x,350)
+k5[name] = 3
+end
+if key == 3 and k5[name] == 1 and down == false then
+ tfm.exec.movePlayer(name,x,300)
+k5[name] = 2
+end
+
+if key == 1 and k5[name] == 2 then
+ tfm.exec.movePlayer(name,x,250)
+k5[name] = 1
+end
+if key == 1 and k5[name] == 3 and down == false then
+ tfm.exec.movePlayer(name,x,300)
+k5[name] = 2
+end
+end
+end
+
+function eventLoop()
+otimeer = otimeer + 1
+if otimeer > 180 and Map == 0 then
+ui.addTextArea(1,"<p align = 'center'><font size='30' color = '#000000'><a href='event:music'>Play!</a>",nil,350,60,95,40, 0xffffff, 0x000000,1,true)
+otimeer = 0
+end
+if Map == 1 then
+Mice = 0
+for name in next, tfm.get.room.playerList do
+if DED[name] == 1 then
+Mice = Mice + 1
+end
+end
+
+if Mice == 0 and T >= 12 then
+tfm.exec.setRoomPassword("LockedRoom")
+text1 = 0
+T = -9999
+spiksXspawns = 0
+BXspawns = 0
+ActFightTime = 0
+tfm.exec.disableAutoShaman(true)
+tfm.exec.disableAfkDeath(true)
+tfm.exec.disableAutoNewGame(true)
+tfm.exec.disablePhysicalConsumables(true)
+tfm.exec.disableDebugCommand(true)
+tfm.exec.disableMortCommand(true)
+tfm.exec.disableAutoScore(true)
+
+tfm.exec.newGame([[<C><P L="1600" Ca="" MEDATA=";;;;-0;0:::1-"/><Z><S><S T="10" X="1387" Y="-125" L="93" H="10" P="0,0,0.3,0,0,0,0,0"/><S T="10" X="1393" Y="-164" L="93" H="10" P="0,0,0.3,0,0,0,0,0"/><S T="10" X="1410" Y="-156" L="93" H="10" P="0,0,0.3,0,90,0,0,0"/><S T="10" X="1367" Y="-158" L="93" H="10" P="0,0,0.3,0,90,0,0,0"/><S T="12" X="1200" Y="200" L="800" H="400" P="0,0,0.3,0.2,0,0,0,0" o="000000" N=""/><S T="12" X="860" Y="120" L="40" H="120" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1440" Y="120" L="40" H="120" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1220" Y="290" L="40" H="120" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1030" Y="125" L="40" H="130" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="920" Y="290" L="40" H="120" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1120" Y="125" L="40" H="130" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1460" Y="255" L="40" H="50" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1460" Y="335" L="40" H="50" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1010" Y="290" L="40" H="120" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="870" Y="120" L="40" H="140" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1450" Y="120" L="40" H="140" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1230" Y="290" L="40" H="140" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1040" Y="120" L="40" H="140" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1380" Y="290" L="40" H="140" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="930" Y="290" L="40" H="140" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1190" Y="120" L="50" H="140" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1280" Y="120" L="50" H="140" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1280" Y="75" L="50" H="200" P="0,0,0.3,0.2,90,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1120" Y="335" L="50" H="100" P="0,0,0.3,0.2,270,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1370" Y="125" L="50" H="120" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1155" Y="285" L="50" H="130" P="0,0,0.3,0.2,180,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1070" Y="290" L="50" H="140" P="0,0,0.3,0.2,180,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1110" Y="120" L="40" H="140" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1450" Y="290" L="40" H="140" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1000" Y="290" L="40" H="140" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="940" Y="65" L="30" H="100" P="0,0,0.3,0.2,-90,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1500" Y="65" L="30" H="100" P="0,0,0.3,0.2,-90,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1280" Y="235" L="30" H="100" P="0,0,0.3,0.2,-90,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1500" Y="175" L="30" H="100" P="0,0,0.3,0.2,-90,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1280" Y="345" L="30" H="100" P="0,0,0.3,0.2,-90,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1480" Y="120" L="30" H="100" P="0,0,0.3,0.2,-90,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1260" Y="290" L="30" H="100" P="0,0,0.3,0.2,-90,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="930" Y="175" L="30" H="100" P="0,0,0.3,0.2,-90,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="950" Y="125" L="30" H="80" P="0,0,0.3,0.2,-90,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1070" Y="65" L="30" H="80" P="0,0,0.3,0.2,-90,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1410" Y="235" L="30" H="80" P="0,0,0.3,0.2,-90,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="960" Y="235" L="30" H="80" P="0,0,0.3,0.2,-90,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="960" Y="345" L="30" H="80" P="0,0,0.3,0.2,-90,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1075" Y="125" L="30" H="80" P="0,0,0.3,0.2,-90,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="1415" Y="295" L="30" H="80" P="0,0,0.3,0.2,-90,0,0,0" o="FFFFFF" c="4" N=""/><S T="12" X="965" Y="145" L="50" H="70" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/></S><D><DS X="1387" Y="-145"/></D><O/><L/></Z></C>]])
+Map = 2
+end
+
+if WBFON == 1 then
+if ActFightTime == 1 then
+AFT = AFT + 1
+print(math.random(0,2))
+end
+if AFT == 60 then
+act = 1
+end
+if AFT >= 120 then
+fight = 1
+AFT = 0
+end
+if BHP == 10 then
+BHPT = "<A:ACTIVE>HP<N2>:<R> ••<fc>••<D>••<T>••<VP>••"
+tfm.exec.setUIMapName(RN..BHPT)
+end
+if BHP == 9 then
+BHPT = "<A:ACTIVE>HP<N2>:<R> ••<fc>••<D>••<T>••<VP>•"
+tfm.exec.setUIMapName(RN..BHPT)
+end
+if BHP == 8 then
+BHPT = "<A:ACTIVE>HP<N2>:<R> ••<fc>••<D>••<T>••"
+tfm.exec.setUIMapName(RN..BHPT)
+end
+if BHP == 7 then
+BHPT = "<A:ACTIVE>HP<N2>:<R> ••<fc>••<D>••<T>•"
+tfm.exec.setUIMapName(RN..BHPT)
+end
+if BHP == 6 then
+BHPT = "<A:ACTIVE>HP<N2>:<R> ••<fc>••<D>••"
+tfm.exec.setUIMapName(RN..BHPT)
+end
+if BHP == 5 then
+BHPT = "<A:ACTIVE>HP<N2>:<R> ••<fc>••<D>•"
+tfm.exec.setUIMapName(RN..BHPT)
+end
+if BHP == 4 then
+BHPT = "<A:ACTIVE>HP<N2>:<R> ••<fc>••"
+tfm.exec.setUIMapName(RN..BHPT)
+end
+if BHP == 3 then
+BHPT = "<A:ACTIVE>HP<N2>:<R> ••<fc>•"
+tfm.exec.setUIMapName(RN..BHPT)
+end
+if BHP == 2 then
+BHPT = "<A:ACTIVE>HP<N2>:<R> ••"
+tfm.exec.setUIMapName(RN..BHPT)
+end
+if BHP == 1 then
+BHPT = "<A:ACTIVE>HP<N2>:<R> •"
+tfm.exec.setUIMapName(RN..BHPT)
+end
+if BHP == 0 then
+BHPT = "<A:ACTIVE>HP<N2>:<R> DEAD"
+tfm.exec.setUIMapName(RN..BHPT)
+end
+if spiksXspawns == 1 then
+bn = bn + 1
+tfm.exec.addPhysicObject(bn, math.random(250,550), 0, {
+    type = 13, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 50, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addImage("1836565619a.png","+"..bn,-8,-26)
+if spiksXboost == 1 then
+tfm.exec.movePhysicObject(bn, 0, 0, true, 0, 50, false)
+end
+if spiksXboost == 2 then
+tfm.exec.movePhysicObject(bn, 0, 0, true, math.random(-10,10), math.random(20,100), false)
+end
+end
+if cube1 == 1 then
+tfm.exec.addPhysicObject(-1, 400, 300, {
+    type = 12, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 300, 
+    height = 160, 
+    groundCollision = false,
+    miceCollision = false
+})
+tfm.exec.addPhysicObject(-2, 400, 300, {
+    type = 12, 
+    color = "0x000000", 
+    restitution = 0, 
+    friction = 0, 
+    width = 290, 
+    height = 150, 
+    groundCollision = false,
+    miceCollision = false
+})
+
+tfm.exec.addPhysicObject(-3, 240, 300, {
+    type = 14, 
+    color = "0x000000", 
+    restitution = 0, 
+    friction = 0, 
+    width = 40, 
+    height = 220, 
+    groundCollision = false,
+    miceCollision = true
+})
+tfm.exec.addPhysicObject(-4, 560, 300, {
+    type = 14, 
+    color = "0x000000", 
+    restitution = 0, 
+    friction = 0, 
+    width = 40, 
+    height = 220, 
+    groundCollision = false,
+    miceCollision = true
+})
+tfm.exec.addPhysicObject(-5, 400, 205, {
+    type = 14, 
+    color = "0x000000", 
+    restitution = 0, 
+    friction = 0, 
+    width = 360, 
+    height = 40, 
+    groundCollision = false,
+    miceCollision = true
+})
+tfm.exec.addPhysicObject(-6, 400, 390, {
+    type = 14, 
+    color = "0x000000", 
+    restitution = 0, 
+    friction = 0, 
+    width = 360, 
+    height = 40, 
+    groundCollision = false,
+    miceCollision = true
+})
+cube1 = 0
+end
+
+if Mimg == 1 then
+MimgO = MimgO + 1
+end
+if MimgO == 1 then
+tfm.exec.addPhysicObject(999, 300, 20, {
+    type = 12, 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9999,
+    linearDamping = 9999,
+    angularDamping = 9999,
+    miceCollision = false,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addImage(Mimg1,"+"..999,0,0)
+end
+if MimgO >= 3 then
+tfm.exec.addPhysicObject(999, 300, 20, {
+    type = 12, 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9999,
+    linearDamping = 9999,
+    angularDamping = 9999,
+    miceCollision = false,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addImage(Mimg2,"+"..999,0,0)
+MimgO = 0
+end
+
+if BHP <= 0 then
+text1 = 0
+Mimg1 = "183bd8fa1f8.png"
+Mimg2 = "183bd8fa1f8.png"
+spiksXspawns = 0
+BXspawns = 0
+ActFightTime = 0
+BHP = BHP - 1
+end
+if BHP == -8 then
+ui.addTextArea(-99999,"<font size='16' color = '#ffffff'><a hrf='event:music'>OH! \nso that's how is it.\nBeing a loser is not a good feeling. huh?",nil,500,40,280,140, 0x000001, 0xffffff,1,true)
+tfm.exec.playSound("deadmaze/plop.mp3", 100)
+end
+if BHP == -24 then
+ui.addTextArea(-99999,"<font size='16' color = '#ffffff'><a hrf='event:music'>Well",nil,500,40,280,140, 0x000001, 0xffffff,1,true)
+tfm.exec.playSound("deadmaze/plop.mp3", 100)
+end
+if BHP == -28 then
+ui.addTextArea(-99999,"<font size='16' color = '#ffffff'><a hrf='event:music'>Goodbye for now.\nI will always be here if you want a challenge.",nil,500,40,280,140, 0x000001, 0xffffff,1,true)
+tfm.exec.playSound("deadmaze/plop.mp3", 100)
+end
+if BHP <= -40 then
+system.exit()
+WBFON = 0
+end
+if text1 == -2 then
+Ttxt = Ttxt + 1
+end
+if Ttxt == 70 then
+ui.addTextArea(0,"<font size='16' color = '#ffffff'><a hrf='event:music'>OH! \ncome on.\nI will make sure you DIE this time.",nil,500,40,280,140, 0x000001, 0xffffff,1,true)
+tfm.exec.playSound("deadmaze/plop.mp3", 100)
+end
+if Ttxt == 86 then
+ui.addTextArea(0,"<font size='16' color = '#ffffff'><a hrf='event:music'>i'll make your move harder\nHa Ha Ha Ha!",nil,500,40,280,140, 0x000001, 0xffffff,1,true)
+tfm.exec.playSound("deadmaze/plop.mp3", 100)
+end
+if Ttxt == 100 then
+ui.removeTextArea(0)
+text1 = 2
+end
+if text1 == -1 then
+Ttxt = Ttxt + 1
+end
+if Ttxt == 10 then
+ui.addTextArea(0,"<font size='16' color = '#ffffff'><a hrf='event:music'>Well?",nil,500,40,280,140, 0x000001, 0xffffff,1,true)
+tfm.exec.playSound("deadmaze/plop.mp3", 100)
+end
+if Ttxt == 18 then
+ui.addTextArea(0,"<font size='16' color = '#ffffff'><a hrf='event:music'>Looks like I have to do more than that to kill you.",nil,500,40,280,140, 0x000001, 0xffffff,1,true)
+tfm.exec.playSound("deadmaze/plop.mp3", 100)
+end
+if Ttxt == 40 then
+ui.addTextArea(0,"<font size='16' color = '#ffffff'><a hrf='event:music'>Let's make this harder!!",nil,500,40,280,140, 0x000001, 0xffffff,1,true)
+tfm.exec.playSound("deadmaze/plop.mp3", 100)
+end
+if Ttxt == 60 then
+ui.removeTextArea(0)
+text1 = 2
+end
+
+if text1 >= 1 then
+T = T + 1
+ActFightTime = 1
+end
+if T == 8 and text1 == 1 then
+tfm.exec.playSound("cite18/musique/esprit1.mp3", volume)
+ui.addTextArea(0,"<font size='16' color = '#ffffff'><a hrf='event:music'>...",nil,500,40,280,140, 0x000001, 0xffffff,1,true)
+end
+if T == 12 and text1 == 1 then
+ui.addTextArea(0,"<font size='16' color = '#ffffff'><a hrf='event:music'>Do",nil,500,40,280,140, 0x000001, 0xffffff,1,true)
+end
+if T == 13 and text1 == 1 then
+ui.addTextArea(0,"<font size='16' color = '#ffffff'><a hrf='event:music'>Do you",nil,500,40,280,140, 0x000001, 0xffffff,1,true)
+end
+if T == 14 and text1 == 1 then
+ui.addTextArea(0,"<font size='16' color = '#ffffff'><a hrf='event:music'>Do you want",nil,500,40,280,140, 0x000001, 0xffffff,1,true)
+end
+if T == 15 and text1 == 1 then
+ui.addTextArea(0,"<font size='16' color = '#ffffff'><a hrf='event:music'>Do you want to",nil,500,40,280,140, 0x000001, 0xffffff,1,true)
+end
+if T == 16 and text1 == 1 then
+ui.addTextArea(0,"<font size='16' color = '#ffffff'><a hrf='event:music'>Do you want to have",nil,500,40,280,140, 0x000001, 0xffffff,1,true)
+end
+if T == 17 and text1 == 1 then
+ui.addTextArea(0,"<font size='16' color = '#ffffff'><a hrf='event:music'>Do you want to have a",nil,500,40,280,140, 0x000001, 0xffffff,1,true)
+end
+if T == 18 and text1 == 1 then
+ui.addTextArea(0,"<font size='16' color = '#ffffff'><a hrf='event:music'>Do you want to have a BAD",nil,500,40,280,140, 0x000001, 0xffffff,1,true)
+end
+if T >= 19 and text1 == 1 then
+ui.addTextArea(0,"<font size='16' color = '#ffffff'><a hrf='event:music'>Do you want to have a BAD TIME?",nil,500,40,280,140, 0x000001, 0xffffff,1,true)
+end
+if T <= 19 and T >= 12 and text1 == 1 then
+tfm.exec.playSound("deadmaze/plop.mp3", 100)
+end
+if T >= 26 and text1 == 1 then
+ui.removeTextArea(0)
+text1 = 2
+end
+
+if T >= 28 and T <= 30 then
+spiksXspawns = 1
+end
+if T >= 64 and T <= 66 then
+spiksXspawns = 0
+end
+if T >= 67 and T <= 69 then
+ui.addTextArea(0,"<font size='16' color = '#ffffff'><a hrf='event:music'>Looks like you'r good at this.\nDon't worry I'll show you the best!",nil,500,40,280,140, 0x000001, 0xffffff,1,true)
+end
+if T >= 80 and T <= 82 then
+ui.removeTextArea(0)
+LC1 ={X = 300,Y = math.random(250,350)}
+lazer1Xspawns = 1
+T = 83
+end
+if T >= 90 and T <= 92 then
+LC2 ={X = 500,Y = math.random(250,350)}
+lazer2Xspawns = 1
+T = 93
+end
+if T >= 95 and T <= 97 then
+LC1 ={X = 300,Y = math.random(250,350)}
+lazer1Xspawns = 1
+T = 98
+end
+if T >= 100 and T <= 102 then
+LC2 ={X = 500,Y = math.random(250,350)}
+lazer2Xspawns = 1
+T = 103
+end
+if T == 108 then
+LC1 ={X = 300,Y = math.random(250,350)}
+lazer1Xspawns = 1
+end
+if T == 112 then
+LC2 ={X = 500,Y = math.random(250,350)}
+lazer2Xspawns = 1
+end
+if T == 122 then
+spiks5spawns = 1
+LC1 ={X = 300,Y = math.random(250,350)}
+lazer1Xspawns = 1
+LC2 ={X = 500,Y = math.random(250,350)}
+lazer2Xspawns = 1
+end
+if T == 132 then
+spiks5spawns = 1
+LC1 ={X = 300,Y = 250}
+lazer1Xspawns = 1
+LC2 ={X = 500,Y = 350}
+lazer2Xspawns = 1
+end
+if T == 142 then
+spiks5spawns = 1
+LC1 ={X = 300,Y = math.random(250,350)}
+lazer1Xspawns = 1
+LC2 ={X = 500,Y = math.random(250,350)}
+lazer2Xspawns = 1
+end
+if T == 152 then
+spiks5spawns = 1
+LC1 ={X = 300,Y = 250}
+lazer1Xspawns = 1
+LC2 ={X = 500,Y = 350}
+lazer2Xspawns = 1
+end
+if T == 162 then
+spiks5spawns = 1
+LC1 ={X = 300,Y = math.random(250,350)}
+lazer1Xspawns = 1
+LC2 ={X = 500,Y = math.random(250,350)}
+lazer2Xspawns = 1
+end
+if T == 172 then
+spiksXspawns = 1
+spiks5spawns = 1
+LC1 ={X = 300,Y = math.random(250,350)}
+lazer1Xspawns = 1
+LC2 ={X = 500,Y = math.random(250,350)}
+lazer2Xspawns = 1
+end
+if T == 182 then
+spiks5spawns = 1
+LC1 ={X = 300,Y = 250}
+lazer1Xspawns = 1
+LC2 ={X = 500,Y = 350}
+lazer2Xspawns = 1
+end
+if T == 192 then
+spiks5spawns = 1
+LC1 ={X = 300,Y = math.random(250,350)}
+lazer1Xspawns = 1
+LC2 ={X = 500,Y = math.random(250,350)}
+lazer2Xspawns = 1
+end
+if T == 200 then
+spiksXspawns = 0
+text1 = -1
+T = 205
+end
+if T == 209 then
+tfm.exec.setWorldGravity(0, 0.1)
+fly = 0
+tfm.exec.playSound("cite18/musique/esprit2.mp3", volume)
+end
+if T >= 210 and T <= 218 then
+for name in next, tfm.get.room.playerList do
+H3[name] = tfm.exec.addImage("18371041e0d.png","%"..name,-12,-12,name)
+tfm.exec.freezePlayer(name, false)
+HP[name] = 20
+tfm.exec.setPlayerGravityScale(name, 100, 0)
+tfm.exec.movePlayer(name, 400, 290)
+ui.addTextArea(1,"<font size='30' color = '#ff0000'><a hrf='event:music'><A:ACTIVE>HP:<n>         "..HP[name].."/20",name,0,20,220,40, 0xffffff, 0x000000,0,true)
+ui.addTextArea(2,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,60,25,60,30, 0xFF0000, 0xFF0000,1,true)
+ui.addTextArea(3,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,60,25,HP[name] * 3,30, 0xFFFF00, 0xFFFF00,1,true)
+ui.addTextArea(4,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,53,10,70,20, 0x000001, 0x000001,1,true)
+ui.addTextArea(5,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,53,55,70,20, 0x000001, 0x000001,1,true)
+end
+cube0spiks = 1
+planks1 = 1
+T = 220
+end
+if T >= 234 and T <= 238 then
+tfm.exec.removePhysicObject(7)
+tfm.exec.removeImage(plank1)
+T = 240
+end
+if T == 250 then
+LC1 ={X = 300,Y = 340}
+lazer1Xspawns = 1
+end
+if T == 260 then
+LC2 ={X = 500,Y = 300}
+lazer2Xspawns = 1
+end
+if T == 270 then
+LC1 ={X = 300,Y = 340}
+lazer1Xspawns = 1
+LC2 ={X = 500,Y = 250}
+lazer2Xspawns = 1
+end
+if T == 280 then
+balls1 = tfm.exec.addImage("183909010cc.png","!3",240,30,nil,-1)
+balls2 = tfm.exec.addImage("183909010cc.png","!3",560,30,nil)
+lazer3Xspawns = 1
+lazer4Xspawns = 1
+end
+if T > 280 and T < 360 then
+LC3 ={X = 200,Y = 100,VX = math.random(12,20),VY = math.random(15,20),T = 8}
+LC4 ={X = 600,Y = 100,VX = math.random(-12,-20),VY = math.random(15,20),T = 8}
+end
+if T == 320 then
+LC1 ={X = 300,Y = 340}
+lazer1Xspawns = 1
+end
+if T == 330 then
+LC1 ={X = 300,Y = 340}
+lazer1Xspawns = 1
+end
+if T == 340 then
+LC1 ={X = 300,Y = 340}
+lazer1Xspawns = 1
+end
+if T == 360 then
+LC2 ={X = 500,Y = 300}
+lazer2Xspawns = 1
+end
+if T == 380 then
+LC1 ={X = 300,Y = 340}
+lazer1Xspawns = 1
+LC2 ={X = 500,Y = 250}
+lazer2Xspawns = 1
+spiksXspawns = 1
+end
+if T == 400 then
+lazer3Xspawns = 0
+lazer4Xspawns = 0
+tfm.exec.removeImage(balls1)
+tfm.exec.removeImage(balls2)
+end
+if T == 420 then
+spiksXspawns = 0
+end
+if T >= 464 and T <= 468 then
+tfm.exec.playSound("cite18/musique/esprit2.mp3", volume)
+tfm.exec.removePhysicObject(3)
+tfm.exec.removePhysicObject(4)
+tfm.exec.removePhysicObject(5)
+tfm.exec.removePhysicObject(6)
+tfm.exec.removePhysicObject(7)
+tfm.exec.removeImage(SC)
+T = 470
+end
+if T == 480 then
+LRa1 = (math.random(1,3))
+end
+if T == 490 then
+LRa2 = (math.random(1,3))
+end
+if T == 505 then
+LRa1 = (math.random(1,3))
+LRa2 = (math.random(1,3))
+end
+if T == 510 then
+LRa1 = (math.random(1,3))
+end
+if T == 515 then
+LRa2 = (math.random(1,3))
+end
+if T == 520 then
+LRa1 = (math.random(1,3))
+end
+if T == 525 then
+LRa2 = (math.random(1,3))
+end
+if T == 530 then
+LRa1 = (math.random(1,3))
+end
+if T == 535 then
+LRa2 = (math.random(1,3))
+end
+if T == 550 then
+LRa1 = (math.random(1,3))
+LRa2 = (math.random(1,3))
+end
+if T == 560 then
+LRa1 = (math.random(1,3))
+LRa2 = (math.random(1,3))
+end
+if T == 570 then
+LRa1 = (math.random(1,3))
+LRa2 = (math.random(1,3))
+end
+if T == 580 then
+LRa1 = (math.random(1,3))
+LRa2 = (math.random(1,3))
+end
+if T == 590 then
+LRa1 = (math.random(1,3))
+LRa2 = (math.random(1,3))
+end
+if T == 600 then
+LRa1 = (math.random(1,3))
+LRa2 = (math.random(1,3))
+planks1 = 0
+end
+if T >= 620 and T <= 625 then
+text1 = -2
+Ttxt = 65
+fly = 0
+T = 626
+end
+if T >= 630 and T <= 640 then
+sn = 20000
+tfm.exec.setWorldGravity(0, 0)
+tfm.exec.playSound("cite18/musique/esprit2.mp3", volume)
+tfm.exec.removePhysicObject(8)
+tfm.exec.removePhysicObject(9)
+for name in next, tfm.get.room.playerList do
+H4[name] = tfm.exec.addImage("183b78ebf49.png","%"..name,-12,-12,name)
+tfm.exec.freezePlayer(name, false)
+HP[name] = 20
+k5[name] = 2
+tfm.exec.setPlayerGravityScale(name, 0, 0)
+tfm.exec.movePlayer(name, 400, 300)
+ui.addTextArea(1,"<font size='30' color = '#ff0000'><a hrf='event:music'><A:ACTIVE>HP:<n>         "..HP[name].."/20",name,0,20,220,40, 0xffffff, 0x000000,0,true)
+ui.addTextArea(2,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,60,25,60,30, 0xFF0000, 0xFF0000,1,true)
+ui.addTextArea(3,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,60,25,HP[name] * 3,30, 0xFFFF00, 0xFFFF00,1,true)
+ui.addTextArea(4,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,53,10,70,20, 0x000001, 0x000001,1,true)
+ui.addTextArea(5,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,53,55,70,20, 0x000001, 0x000001,1,true)
+end
+purp1 = 1
+prpl = 1
+T = 642
+end
+if T == 650 then
+BR2 = 1
+end
+if T == 652 then
+BL1 = 1
+end
+if T == 654 then
+BR3 = 1
+end
+if T == 660 then
+BR3 = 1
+BR2 = 1
+end
+if T == 661 then
+BR1 = 1
+end
+if T == 665 then
+BL2 = 1
+end
+if T == 666 then
+BL3 = 1
+BL1 = 1
+end
+if T == 667 then
+BL2 = 1
+end
+if T == 668 then
+BL3 = 1
+BL1 = 1
+end
+if T == 680 then
+LC1 ={X = 300,Y = 300}
+lazer1Xspawns = 1
+end
+if T == 690 then
+LC1 ={X = 300,Y = 250}
+lazer1Xspawns = 1
+LC2 ={X = 500,Y = 350}
+lazer2Xspawns = 1
+end
+if T == 700 then
+BR.S = -50
+BL.S = 50
+BXspawns = 1
+end
+if T == 800 then
+spiksXspawns = 1
+spiksXboost = 1
+end
+if T == 860 then
+BR.S = -80
+BL.S = 80
+end
+if T == 900 then
+spiksXboost = 2
+end
+--------------------
+if act == 1 then
+tfm.exec.addPhysicObject(801, math.random(300,490), 0, {
+    type = 12, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 90, 
+    height = 30, 
+    dynamic = true, 
+    mass = 1,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addImage("183bac41aa5.png","+"..801,-49,-19)
+if T > 200 then
+tfm.exec.movePhysicObject(801, 0, 0, true, 0, 80, false)
+end
+act = 0
+end
+if fight == 1 then
+tfm.exec.addPhysicObject(800, math.random(300,490), 0, {
+    type = 12, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 90, 
+    height = 30, 
+    dynamic = true, 
+    mass = 1,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addImage("183bac374d6.png","+"..800,-49,-19)
+if T > 200 then
+tfm.exec.movePhysicObject(800, 0, 0, true, 0, 80, false)
+end
+fight = 0
+end
+if BXspawns == 1 then
+BR1 = (math.random(0,BXR))
+BR2 = (math.random(0,BXR))
+BR3 = (math.random(0,BXR))
+BL1 = (math.random(0,BXR))
+BL2 = (math.random(0,BXR))
+BL3 = (math.random(0,BXR))
+end
+if BR1 == 1 then
+sn = sn + 1
+tfm.exec.addPhysicObject(sn,800,250, {
+    type = 13, 
+    color = 0xffffff, 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addImage("1836833c456.png","+"..sn,-10,-10)
+tfm.exec.movePhysicObject(sn, 0, 0, true, BR.S, 0, false)
+BR1 = 0
+end
+if BR2 == 1 then
+sn = sn + 1
+tfm.exec.addPhysicObject(sn,800,300, {
+    type = 13, 
+    color = 0xffffff, 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addImage("1836833c456.png","+"..sn,-10,-10)
+tfm.exec.movePhysicObject(sn, 0, 0, true, BR.S, 0, false)
+BR2 = 0
+end
+if BR3 == 1 then
+sn = sn + 1
+tfm.exec.addPhysicObject(sn,800,350, {
+    type = 13, 
+    color = 0xffffff, 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addImage("1836833c456.png","+"..sn,-10,-10)
+tfm.exec.movePhysicObject(sn, 0, 0, true, BR.S, 0, false)
+BR3 = 0
+end
+
+if BL1 == 1 then
+sn = sn + 1
+tfm.exec.addPhysicObject(sn,0,250, {
+    type = 13, 
+    color = 0xffffff, 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addImage("1836833c456.png","+"..sn,-10,-10)
+tfm.exec.movePhysicObject(sn, 0, 0, true, BL.S, 0, false)
+BL1 = 0
+end
+if BL2 == 1 then
+sn = sn + 1
+tfm.exec.addPhysicObject(sn,0,300, {
+    type = 13, 
+    color = 0xffffff, 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addImage("1836833c456.png","+"..sn,-10,-10)
+tfm.exec.movePhysicObject(sn, 0, 0, true, BL.S, 0, false)
+BL2 = 0
+end
+if BL3 == 1 then
+sn = sn + 1
+tfm.exec.addPhysicObject(sn,0,350, {
+    type = 13, 
+    color = 0xffffff, 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addImage("1836833c456.png","+"..sn,-10,-10)
+tfm.exec.movePhysicObject(sn, 0, 0, true, BL.S, 0, false)
+BL3 = 0
+end
+if purp1 == 1 then
+tfm.exec.addPhysicObject(4, 400, 300, {
+    type = 12, 
+    color = 0xc400FF,
+    restitution = 0, 
+    friction = 0, 
+    width = 280, 
+    height = 110, 
+    groundCollision = false,
+    miceCollision = false
+})
+tfm.exec.addPhysicObject(5, 400, 325, {
+    type = 12, 
+    color = 0x000000,
+    restitution = 0, 
+    friction = 0, 
+    width = 290, 
+    height = 48, 
+    groundCollision = false,
+    miceCollision = true
+})
+tfm.exec.addPhysicObject(6, 400, 275, {
+    type = 12, 
+    color = 0x000000,
+    restitution = 0, 
+    friction = 0, 
+    width = 290, 
+    height = 48, 
+    groundCollision = false,
+    miceCollision = true
+})
+tfm.exec.addPhysicObject(7, 400, 240, {
+    type = 12, 
+    color = 0x000000,
+    restitution = 0, 
+    friction = 0, 
+    width = 290, 
+    height = 18, 
+    groundCollision = false,
+    miceCollision = true
+})
+tfm.exec.addPhysicObject(8, 400, 360, {
+    type = 12, 
+    color = 0x000000,
+    restitution = 0, 
+    friction = 0, 
+    width = 280, 
+    height = 18, 
+    groundCollision = false,
+    miceCollision = true
+})
+purp1 = 0
+end
+
+if LRa1 == 1 then
+LC1 ={X = 300,Y = 360}
+lazer1Xspawns = 1
+LRa1 = 0
+end
+if LRa1 == 2 then
+LC1 ={X = 300,Y = 320}
+lazer1Xspawns = 1
+LRa1 = 0
+end
+if LRa1 == 3 then
+LC1 ={X = 300,Y = 280}
+lazer1Xspawns = 1
+LRa1 = 0
+end
+
+if LRa2 == 1 then
+LC2 ={X = 500,Y = 360}
+lazer2Xspawns = 1
+LRa2 = 0
+end
+if LRa2 == 2 then
+LC2 ={X = 500,Y = 320}
+lazer2Xspawns = 1
+LRa2 = 0
+end
+if LRa2 == 3 then
+LC2 ={X = 500,Y = 280}
+lazer2Xspawns = 1
+LRa2 = 0
+end
+
+if planks1 == 1 then
+PT = PT + 1
+tfm.exec.addPhysicObject(8, 400, 310, {
+    type = 14, 
+    restitution = 0, 
+    friction = 0, 
+    width = 1000, 
+    height = 10, 
+    groundCollision = true,
+    miceCollision = false
+})
+tfm.exec.addPhysicObject(9, 400, 350, {
+    type = 14, 
+    restitution = 0, 
+    friction = 0, 
+    width = 1000, 
+    height = 10, 
+    groundCollision = true,
+    miceCollision = false
+})
+end
+if PT >= 4 then
+tfm.exec.addPhysicObject(PID, 840, 340, {
+    type = 0, 
+    restitution = 0, 
+    friction = 0.3, 
+    width = 40, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9999,
+    groundCollision = true,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(PID-1, -40, 300, {
+    type = 0, 
+    restitution = 0, 
+    friction = 0.3, 
+    width = 40, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9999,
+    groundCollision = true,
+    fixedRotation = true
+})
+tfm.exec.addImage("183721ad50e.png","+"..PID,-20,-5)
+tfm.exec.addImage("183721ad50e.png","+"..PID-1,-20,-5)
+tfm.exec.movePhysicObject(PID, 0, 0, true, -20, 0, false)
+tfm.exec.movePhysicObject(PID-1, 0, 0, true, 20, 0, false)
+PID = PID + 2
+PT = 0
+end
+if cube0spiks == 1 then
+SC = tfm.exec.addImage("183721a8230.png","!2",250,220)
+tfm.exec.addPhysicObject(7, 400, 300, {
+    type = 14, 
+    restitution = 0, 
+    friction = 0.2, 
+    width = 40, 
+    height = 10, 
+    groundCollision = false,
+    miceCollision = true
+})
+plank1 = tfm.exec.addImage("183721ad50e.png","!1",400-20,300-5)
+tfm.exec.addPhysicObject(3, 400, 220, {
+    type = 14, 
+    restitution = 0.8, 
+    friction = 0, 
+    width = 300, 
+    height = 20, 
+    groundCollision = false,
+    contactListener = true,
+    miceCollision = true
+})
+tfm.exec.addPhysicObject(4, 400, 380, {
+    type = 14, 
+    restitution = 1, 
+    friction = 0, 
+    width = 300, 
+    height = 20, 
+    groundCollision = false,
+    contactListener = true,
+    miceCollision = true
+})
+tfm.exec.addPhysicObject(5, 260, 300, {
+    type = 14, 
+    angle = -1, 
+    restitution = 1, 
+    friction = 0, 
+    width = 20, 
+    height = 120, 
+    groundCollision = false,
+    contactListener = true,
+    miceCollision = true
+})
+tfm.exec.addPhysicObject(6, 540, 300, {
+    type = 14, 
+    angle = 1, 
+    restitution = 1, 
+    friction = 0, 
+    width = 20, 
+    height = 120, 
+    groundCollision = false,
+    contactListener = true,
+    miceCollision = true
+})
+cube0spiks = 0
+end
+if lazer3Xspawns == 1 then
+LT3 = LT3 + 1
+end
+if LT3 >= LC3.T then
+tfm.exec.addPhysicObject(sn,LC3.X,LC3.Y, {
+    type = 13, 
+    angle = 45,
+    color = 0xffffff, 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(sn +1,LC3.X,LC3.Y, {
+    type = 13, 
+    angle = 45,
+    color = 0xffffff, 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(sn +2,LC3.X,LC3.Y, {
+    type = 13, 
+    angle = 45,
+    color = 0xffffff, 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(sn +3,LC3.X,LC3.Y, {
+    type = 13, 
+    angle = 45,
+    color = 0xffffff, 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(sn +4,LC3.X,LC3.Y, {
+    type = 13, 
+    angle = 45,
+    color = 0xffffff, 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addImage("1836833c456.png","+"..sn,-10,-10)
+tfm.exec.addImage("1836833c456.png","+"..sn +1,-10,-10)
+tfm.exec.addImage("1836833c456.png","+"..sn +2,-10,-10)
+tfm.exec.addImage("1836833c456.png","+"..sn +3,-10,-10)
+tfm.exec.addImage("1836833c456.png","+"..sn +4,-10,-10)
+tfm.exec.movePhysicObject(sn, 0, 0, true, LC3.VX, LC3.VY, false, 45)
+tfm.exec.movePhysicObject(sn + 1, 0, 0, true, LC3.VX+10, LC3.VY, false, 45)
+tfm.exec.movePhysicObject(sn + 2, 0, 0, true, LC3.VX+20, LC3.VY, false, 45)
+tfm.exec.movePhysicObject(sn + 3, 0, 0, true, LC3.VX+30, LC3.VY, false, 45)
+tfm.exec.movePhysicObject(sn + 4, 0, 0, true, LC3.VX+40, LC3.VY, false, 45)
+sn = sn + 5
+tfm.exec.removePhysicObject(sn - 10)
+tfm.exec.removePhysicObject(sn - 11)
+tfm.exec.removePhysicObject(sn - 12)
+tfm.exec.removePhysicObject(sn - 13)
+tfm.exec.removePhysicObject(sn - 14)
+LT3 = 0
+end
+
+if lazer4Xspawns == 1 then
+LT4 = LT4 + 1
+end
+if LT4 >= LC4.T then
+tfm.exec.addPhysicObject(sn,LC4.X,LC4.Y, {
+    type = 13, 
+    angle = 45,
+    color = 0xffffff, 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(sn +1,LC4.X,LC4.Y, {
+    type = 13, 
+    angle = 45,
+    color = 0xffffff, 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(sn +2,LC4.X,LC4.Y, {
+    type = 13, 
+    angle = 45,
+    color = 0xffffff, 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(sn +3,LC4.X,LC4.Y, {
+    type = 13, 
+    angle = 45,
+    color = 0xffffff, 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(sn +4,LC4.X,LC4.Y, {
+    type = 13, 
+    angle = 45,
+    color = 0xffffff, 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 10, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addImage("1836833c456.png","+"..sn,-10,-10)
+tfm.exec.addImage("1836833c456.png","+"..sn +1,-10,-10)
+tfm.exec.addImage("1836833c456.png","+"..sn +2,-10,-10)
+tfm.exec.addImage("1836833c456.png","+"..sn +3,-10,-10)
+tfm.exec.addImage("1836833c456.png","+"..sn +4,-10,-10)
+tfm.exec.movePhysicObject(sn, 0, 0, true, LC4.VX, LC4.VY, false, 45)
+tfm.exec.movePhysicObject(sn + 1, 0, 0, true, LC4.VX-10, LC4.VY, false, 45)
+tfm.exec.movePhysicObject(sn + 2, 0, 0, true, LC4.VX-20, LC4.VY, false, 45)
+tfm.exec.movePhysicObject(sn + 3, 0, 0, true, LC4.VX-30, LC4.VY, false, 45)
+tfm.exec.movePhysicObject(sn + 4, 0, 0, true, LC4.VX-40, LC4.VY, false, 45)
+sn = sn + 5
+tfm.exec.removePhysicObject(sn - 15)
+tfm.exec.removePhysicObject(sn - 16)
+tfm.exec.removePhysicObject(sn - 17)
+tfm.exec.removePhysicObject(sn - 18)
+tfm.exec.removePhysicObject(sn - 19)
+LT4 = 0
+end
+
+if lazer1Xspawns == 1 then
+LT1 = LT1 + 1
+end
+if LT1 == 1 then
+tfm.exec.addPhysicObject(1, LC1.X, LC1.Y, {
+    type = 14, 
+    restitution = 0, 
+    friction = 0, 
+    width = 800, 
+    height = 12, 
+    groundCollision = false,
+    miceCollision = false
+})
+LZR1f1 = tfm.exec.addImage("1836b1f3da1.png","!1",LC1.X + 305,LC1.Y - 33)
+end
+if LT1 == 4 then
+tfm.exec.removeImage(LZR1f1)
+tfm.exec.addPhysicObject(1, LC1.X, LC1.Y, {
+    type = 14, 
+    restitution = 0, 
+    friction = 0, 
+    width = 800, 
+    height = 12, 
+    contactListener = true,
+    groundCollision = false,
+    miceCollision = true
+})
+LZR1f2 = tfm.exec.addImage("18368331de2.png","!1",LC1.X + 305,LC1.Y - 33)
+LZR1f3 = tfm.exec.addImage("183683370bd.png","!1",LC1.X - 400,LC1.Y - 13)
+end
+if LT1 >= 8 then
+tfm.exec.removePhysicObject(1)
+tfm.exec.removeImage(LZR1f2)
+tfm.exec.removeImage(LZR1f3)
+lazer1Xspawns = 0
+LT1 = 0
+end
+
+if lazer2Xspawns == 1 then
+LT2 = LT2 + 1
+end
+if LT2 == 1 then
+tfm.exec.addPhysicObject(2, LC2.X, LC2.Y, {
+    type = 14, 
+    restitution = 0, 
+    friction = 0, 
+    width = 800, 
+    height = 12, 
+    groundCollision = false,
+    miceCollision = false
+})
+LZR2f1 = tfm.exec.addImage("1836b1f3da1.png","!2",LC2.X - 305,LC2.Y - 33,nil,-1)
+end
+if LT2 == 4 then
+tfm.exec.removeImage(LZR2f1)
+tfm.exec.addPhysicObject(2, LC2.X, LC2.Y, {
+    type = 14, 
+    restitution = 0, 
+    friction = 0, 
+    width = 800, 
+    height = 12,
+    contactListener = true, 
+    groundCollision = false,
+    miceCollision = true
+})
+LZR2f2 = tfm.exec.addImage("18368331de2.png","!2",LC2.X - 305,LC2.Y - 33,nil,-1)
+LZR2f3 = tfm.exec.addImage("183683370bd.png","!2",LC2.X + 400,LC2.Y - 13,nil,-1)
+end
+if LT2 >= 8 then
+tfm.exec.removePhysicObject(2)
+tfm.exec.removeImage(LZR2f2)
+tfm.exec.removeImage(LZR2f3)
+lazer2Xspawns = 0
+LT2 = 0
+end
+if spiks5spawns == 1 then
+tfm.exec.addPhysicObject(1001, 280, 0, {
+    type = 13, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 50, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(1002, 320, 0, {
+    type = 13, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 50, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(1003, 360, 0, {
+    type = 13, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 50, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(1004, 400, 0, {
+    type = 13, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 50, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(1005, 440, 0, {
+    type = 13, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 50, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(1006, 480, 0, {
+    type = 13, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 50, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(1007, 520, 0, {
+    type = 13, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 50, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addImage("1836565619a.png","+"..1001,-8,-26)
+tfm.exec.addImage("1836565619a.png","+"..1002,-8,-26)
+tfm.exec.addImage("1836565619a.png","+"..1003,-8,-26)
+tfm.exec.addImage("1836565619a.png","+"..1004,-8,-26)
+tfm.exec.addImage("1836565619a.png","+"..1005,-8,-26)
+tfm.exec.addImage("1836565619a.png","+"..1006,-8,-26)
+tfm.exec.addImage("1836565619a.png","+"..1007,-8,-26)
+tfm.exec.removePhysicObject(math.random(1001,1007))
+spiks5spawns = 0
+end
+end
+end
+end
+
+function eventContactListener(name, groundId, contactInfos)
+tfm.exec.setPlayerScore(name, HP[name])
+if groundId == 801 then
+tfm.exec.removePhysicObject(801)
+tfm.exec.addPhysicObject(901, 280, 0, {
+    type = 13, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 50, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(902, 320, 0, {
+    type = 13, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 50, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(903, 360, 0, {
+    type = 13, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 50, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(904, 400, 0, {
+    type = 13, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 50, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(905, 440, 0, {
+    type = 13, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 50, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(906, 480, 0, {
+    type = 13, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 50, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addPhysicObject(907, 520, 0, {
+    type = 13, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 50, 
+    dynamic = true, 
+    mass = 9,
+    contactListener = true,
+    groundCollision = false,
+    fixedRotation = true
+})
+tfm.exec.addImage("183bac3c84f.png","+"..901,-10,-10)
+tfm.exec.addImage("183bac3c84f.png","+"..902,-10,-10)
+tfm.exec.addImage("183bac3c84f.png","+"..903,-10,-10)
+tfm.exec.addImage("183bac3c84f.png","+"..904,-10,-10)
+tfm.exec.addImage("183bac3c84f.png","+"..905,-10,-10)
+tfm.exec.addImage("183bac3c84f.png","+"..906,-10,-10)
+tfm.exec.addImage("183bac3c84f.png","+"..907,-10,-10)
+if T > 200 then
+tfm.exec.movePhysicObject(901, 0, 0, true, 0, 30, false)
+tfm.exec.movePhysicObject(902, 0, 0, true, 0, 30, false)
+tfm.exec.movePhysicObject(903, 0, 0, true, 0, 30, false)
+tfm.exec.movePhysicObject(904, 0, 0, true, 0, 30, false)
+tfm.exec.movePhysicObject(905, 0, 0, true, 0, 30, false)
+tfm.exec.movePhysicObject(906, 0, 0, true, 0, 30, false)
+tfm.exec.movePhysicObject(907, 0, 0, true, 0, 30, false)
+end
+end
+if groundId == 800 and MimgO >= 0 then
+MimgO = -3
+tfm.exec.removePhysicObject(800)
+tfm.exec.addPhysicObject(999, 371, -120, {
+    type = 13, 
+    color = "0xffffff", 
+    restitution = 0, 
+    friction = 0, 
+    width = 10, 
+    height = 50, 
+    dynamic = true, 
+    mass = 999,
+    contactListener = true,
+    groundCollision = true,
+    fixedRotation = true
+})
+tfm.exec.addImage(Mimg3,"+"..999,-71,135)
+tfm.exec.movePhysicObject(999, 0, 0, true, 20, 20, false)
+BHP = BHP - 1
+end
+if groundId >= 900 and groundId <= 910 then
+HP[name] = HP[name] + 5
+if HP[name] >= 21 then
+HP[name] = 20
+end
+tfm.exec.removePhysicObject(groundId)
+ui.addTextArea(2,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,60,25,60,30, 0xFF0000, 0xFF0000,1,true)
+ui.addTextArea(3,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,60,25,HP[name] * 3,30, 0xFFFF00, 0xFFFF00,1,true)
+ui.addTextArea(4,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,53,10,70,20, 0x000001, 0x000001,1,true)
+ui.addTextArea(5,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,53,55,70,20, 0x000001, 0x000001,1,true)
+ui.addTextArea(1,"<font size='30' color = '#ff0000'><a hrf='event:music'><A:ACTIVE>HP:<n>         "..HP[name].."/20",name,0,20,220,40, 0xffffff, 0x000000,0,true)
+end
+if groundId >= 0 and groundId <= 10 then
+HP[name] = HP[name] - 2
+ui.addTextArea(2,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,60,25,60,30, 0xFF0000, 0xFF0000,1,true)
+ui.addTextArea(3,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,60,25,HP[name] * 3,30, 0xFFFF00, 0xFFFF00,1,true)
+ui.addTextArea(4,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,53,10,70,20, 0x000001, 0x000001,1,true)
+ui.addTextArea(5,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,53,55,70,20, 0x000001, 0x000001,1,true)
+ui.addTextArea(1,"<font size='30' color = '#ff0000'><a hrf='event:music'><A:ACTIVE>HP:<n>         "..HP[name].."/20",name,0,20,220,40, 0xffffff, 0x000000,0,true)
+end
+if groundId >= 1000 then
+tfm.exec.removePhysicObject(groundId)
+HP[name] = HP[name] - 1
+ui.addTextArea(2,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,60,25,60,30, 0xFF0000, 0xFF0000,1,true)
+ui.addTextArea(3,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,60,25,HP[name] * 3,30, 0xFFFF00, 0xFFFF00,1,true)
+ui.addTextArea(4,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,53,10,70,20, 0x000001, 0x000001,1,true)
+ui.addTextArea(5,"<font size='30' color = '#ff0000'><a hrf='event:music'> ",name,53,55,70,20, 0x000001, 0x000001,1,true)
+ui.addTextArea(1,"<font size='30' color = '#ff0000'><a hrf='event:music'><A:ACTIVE>HP:<n>         "..HP[name].."/20",name,0,20,220,40, 0xffffff, 0x000000,0,true)
+end
+if HP[name] <= 0 then
+ui.removeTextArea(2,name)
+ui.removeTextArea(1,name)
+ui.removeTextArea(3,name)
+ui.removeTextArea(4,name)
+ui.removeTextArea(5,name)
+tfm.exec.killPlayer(name)
+DED[name] = 0
+end
+tfm.exec.setPlayerScore(name, HP[name])
+end
+
+local incorrect_tfm_exec_movePhysicObject = tfm.exec.movePhysicObject
+tfm.exec.movePhysicObject = function(a, b, c, d, e, f, ...)
+  return incorrect_tfm_exec_movePhysicObject(a, b, c, d, (e or 0) / 10, (f or 0) / 10, ...)
+end
