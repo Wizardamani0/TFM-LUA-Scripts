@@ -1,3 +1,7 @@
+
+-- (For Tribe)     <--
+-- (For Funcorps)  <--
+
 tfm.exec.disableAutoShaman(true)
 tfm.exec.disableAfkDeath(true)
 tfm.exec.disableAutoNewGame(true)
