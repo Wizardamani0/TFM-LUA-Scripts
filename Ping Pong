@@ -1,0 +1,260 @@
+-- Ping Pong By WIZ --
+-- room admin --
+admin = "C4sper#4636"
+-- room admin --
+
+-- Max goals to win --
+G = 3
+-- Max goals to win --
+
+
+tfm.exec.disableAutoShaman(true)
+tfm.exec.disableAfkDeath(true)
+tfm.exec.disableAutoNewGame(true)
+tfm.exec.disablePhysicalConsumables(true)
+tfm.exec.disableDebugCommand(true)
+tfm.exec.disableMortCommand(true)
+tfm.exec.disableAutoScore(true)
+ 
+tfm.exec.newGame([[<C><P D="celousco/map/map_celousco_5_3.jpg,-1660,300;celousco/map/map_celousco_6_3.jpg,340,300;celousco/map/map_celousco_5_2.jpg,-1660,-1700;celousco/map/map_celousco_6_2.jpg,340,-1700" G="0,0" Ca="" MEDATA=";;;;-0;0:::1-"/><Z><S><S T="12" X="400" Y="15" L="1000" H="10" P="0,0,0,1,0,0,0,0" o="324650" m=""/><S T="12" X="400" Y="-15" L="1000" H="10" P="0,0,0.3,0.2,0,0,0,0" o="324650" m=""/><S T="12" X="400" Y="-65" L="1000" H="10" P="0,0,0.3,0.2,0,0,0,0" o="324650" m=""/><S T="12" X="460" Y="-65" L="100" H="10" P="0,0,0.3,0.2,90,0,0,0" o="324650" m=""/><S T="12" X="380" Y="-65" L="100" H="10" P="0,0,0.3,0.2,90,0,0,0" o="324650" m=""/><S T="12" X="400" Y="405" L="1000" H="10" P="0,0,0,1,0,0,0,0" o="324650" m=""/><S T="12" X="-100" Y="200" L="400" H="10" P="0,0,0.3,0.2,90,0,0,0" o="324650" m=""/><S T="12" X="900" Y="200" L="400" H="10" P="0,0,0.3,0.2,90,0,0,0" o="324650" m=""/><S T="15" X="-60" Y="200" L="80" H="400" P="0,0,0,0,0,0,0,0" m=""/><S T="15" X="860" Y="200" L="80" H="400" P="0,0,0,0,0,0,0,0" m=""/></S><D><DS X="420" Y="-40"/></D><O/><L/></Z></C>]])
+tfm.exec.setUIMapName("PING PONG!<v> by Wizardmani0#6277")
+ 
+a = 0
+b = 0
+c = 1 
+noob = 5
+ 
+yMousePosition = 200
+ 
+box1 = 200
+box2 = 200
+ 
+roundon = 0
+ 
+roundrun = 0
+ 
+roundOrun = 0
+ 
+P1GOAL = 0
+ 
+P2GOAL = 0
+
+local P1 = "Amani#1206"
+local P2 = "Amani#1206"
+ 
+ui.addTextArea(6,"<font size='14' color = '#000000'><a><p align = 'center'> في لعبة بينغ بونغ عليك اولا ان تضغط زر الدخول\nثم عليك صد الكرة عند محاولتها دخول الجدار الخاص بك\n عليك الضغط في الشاشة لتحريك المستطيل الخاص بك لصد الكرة\n من يحصل على 3 نقاط هو الفائز</a>",nil,205,180,390,80, 0xffffff, 0x000000,1)
+ui.addTextArea(0,"<font size='100' color = '#3172DE'><a hef='event:play'> </a>",nil,200,95,400,80, 0xffffff, 0x000000,1)
+ui.addTextArea(1,"<font size='30' color = '#000000'><a hef='event:play'>VS</a>",nil,380,115,200,320, 0xffffff, 0x000000,0)
+ui.addTextArea(2,"<font size='20' color = '#ff0000'><a href='event:P1join'>     Join</a>",nil,220,120,100,30, 0xffffff, 0x000000,1)
+ui.addTextArea(3,"<font size='20' color = '#0000ff'><a href='event:P2join'>     Join</a>",nil,480,120,100,30, 0xffffff, 0x000000,1)
+ui.addTextArea(7,"<font size='20' color = '#00ff00'><a href='event:GO'>  Start!</a>",admin,360,268,80,30, 0xffffff, 0x000000,1)
+ 
+function eventLoop(currentTime, timeRemaining)
+a = a + 1
+if a >= 10 then
+a = 4
+end 
+if roundOrun == 1 then
+b = b + 1
+end 
+if b >= 5 then
+roundrun = 1
+roundOrun = 0
+b = 0
+end 
+if roundon == 1 then
+tfm.exec.disableAutoShaman(true)
+tfm.exec.disableAfkDeath(true)
+tfm.exec.disableAutoNewGame(true)
+tfm.exec.disablePhysicalConsumables(true)
+tfm.exec.disableDebugCommand(true)
+tfm.exec.disableMortCommand(true)
+tfm.exec.disableAutoScore(true)
+ 
+tfm.exec.newGame([[<C><P D="celousco/map/map_celousco_5_3.jpg,-1660,300;celousco/map/map_celousco_6_3.jpg,340,300;celousco/map/map_celousco_5_2.jpg,-1660,-1700;celousco/map/map_celousco_6_2.jpg,340,-1700" G="0,0" Ca="" MEDATA=";;;;-0;0:::1-"/><Z><S><S T="12" X="400" Y="15" L="1000" H="10" P="0,0,0,1,0,0,0,0" o="324650" m=""/><S T="12" X="400" Y="-15" L="1000" H="10" P="0,0,0.3,0.2,0,0,0,0" o="324650" m=""/><S T="12" X="400" Y="-65" L="1000" H="10" P="0,0,0.3,0.2,0,0,0,0" o="324650" m=""/><S T="12" X="460" Y="-65" L="100" H="10" P="0,0,0.3,0.2,90,0,0,0" o="324650" m=""/><S T="12" X="380" Y="-65" L="100" H="10" P="0,0,0.3,0.2,90,0,0,0" o="324650" m=""/><S T="12" X="400" Y="405" L="1000" H="10" P="0,0,0,1,0,0,0,0" o="324650" m=""/><S T="12" X="-100" Y="200" L="400" H="10" P="0,0,0.3,0.2,90,0,0,0" o="324650" m=""/><S T="12" X="900" Y="200" L="400" H="10" P="0,0,0.3,0.2,90,0,0,0" o="324650" m=""/><S T="15" X="-60" Y="200" L="80" H="400" P="0,0,0,0,0,0,0,0" m=""/><S T="15" X="860" Y="200" L="80" H="400" P="0,0,0,0,0,0,0,0" m=""/><S T="12" X="410" Y="380" L="100" H="40" P="0,0,0.3,0.2,0,0,0,0" o="000000" c="4" N=""/><S T="12" X="410" Y="390" L="80" H="40" P="0,0,0.3,0.2,0,0,0,0" o="FFFFFF" c="4" N=""/></S><D><DS X="420" Y="-40"/></D><O/><L/></Z></C>]])
+tfm.exec.setUIMapName("PING PONG! | 1 VS 1")
+ball1 = tfm.exec.addShamanObject(630,400,200,0,noob,math.random(-15,15))
+ui.removeTextArea(4)
+ui.removeTextArea(10)
+roundOrun = 1
+P1J = 0
+P2J = 0
+system.bindMouse(P1, true)
+system.bindMouse(P2, true)
+roundon = 0
+end 
+ 
+if c == 1 then
+ui.removeTextArea(10)
+ui.addTextArea(10,"<font size='100' color = '#3172DE'><a hef='event:play'> </a>",P1,240,95,320,80, 0xffffff, 0x000000,0)
+ui.addTextArea(10,"<font size='100' color = '#3172DE'><a hef='event:play'> </a>",P2,240,95,320,80, 0xffffff, 0x000000,0)
+end 
+ 
+if P2GOAL == G then
+ui.addTextArea(99,"<font size='50' color = '#0000ff'><a><p align = 'center'>\n\nلقد فاز\n"..P2,nil,-10,-10,820,420, 0xffffff, 0x000000,0.5,true,false)
+roundrun = 0
+end 
+if P1GOAL == G then
+ui.addTextArea(99,"<font size='50' color = '#ff0000'><a><p align = 'center'>\n\nلقد فاز\n"..P1,nil,-10,-10,820,420, 0xffffff, 0x000000,0.5,true,false)
+roundrun = 0
+end 
+ 
+if roundrun == 1 then
+ui.addTextArea(1,"<font size='30' color = '#000000'><a hef='event:play'>:</a>",nil,399,360,100,320, 0xffffff, 0x000000,0)
+ui.addTextArea(2,"<font size='30' color = '#000000'><a hef='event:play'>"..P1GOAL,nil,377,363,100,100, 0xffffff, 0x000000,0)
+ui.addTextArea(3,"<font size='30' color = '#000000'><a hef='event:play'>"..P2GOAL,nil,420,363,100,100, 0xffffff, 0x000000,0)
+ui.addTextArea(4,"<font size='10' color = '#0000ff'><a><p align = 'center'>"..P2,nil,600,380,140,40, 0xffffff, 0x000000,1,false,false)
+ui.addTextArea(5,"<font size='10' color = '#ff0000'><a><p align = 'center'>"..P1,nil,60,380,140,40, 0xffffff, 0x000000,1,false,false)
+tfm.exec.addPhysicObject(1,8,box1-23,{
+type=12,
+restitution=1.2,
+friction=0,
+angle=-2,
+width=20,
+height=50,
+color = 0xFF0000,
+groundCollision=true
+})
+tfm.exec.addPhysicObject(2,8,box1+23,{
+type=12,
+restitution=1.2,
+friction=0,
+angle=2,
+width=20,
+height=50,
+color = 0xFF0000,
+groundCollision=true
+})
+ 
+tfm.exec.addPhysicObject(3,792,box2-23,{
+type=12,
+restitution=1.2,
+friction=0,
+angle=2,
+width=20,
+height=50,
+color = 0x0000ff,
+groundCollision=true
+})
+tfm.exec.addPhysicObject(4,792,box2+23,{
+type=12,
+restitution=1.2,
+friction=0,
+angle=-2,
+width=20,
+height=50,
+color = 0x0000ff,
+groundCollision=true
+})
+end 
+if roundrun == 1 and (tfm.get.room.objectList[ball1].x) >= 800 then
+P1GOAL = P1GOAL + 1
+ui.addTextArea(2,"<font size='30' color = '#000000'><a hef='event:play'>"..P1GOAL,nil,377,363,100,100, 0xffffff, 0x000000,0)
+roundon = 1
+noob = -5
+roundrun = 0
+end 
+if roundrun == 1 and (tfm.get.room.objectList[ball1].x) <= 0 then
+P2GOAL = P2GOAL + 1
+ui.addTextArea(3,"<font size='30' color = '#000000'><a hef='event:play'>"..P2GOAL,nil,420,363,100,100, 0xffffff, 0x000000,0)
+roundon = 1
+noob = 5
+roundrun = 0
+end 
+end
+ 
+function eventTextAreaCallback(id,name,event)
+if event == "P1join" and a >= 4 then
+P1 = name
+P1J = 1
+ui.addTextArea(2,"<font size='10' color = '#ff0000'><a><p align = 'center'>\n"..P1,nil,220,120,140,40, 0xffffff, 0x000000,1,false,false)
+ui.addTextArea(10,"<font size='100' color = '#3172DE'><a hef='event:play'> </a>",name,240,95,320,80, 0xffffff, 0x000000,0)
+ui.addTextArea(91,"<font size='20' color = '#ff0000'><a href='event:P1X'>✘",admin,215,125,30,30, 0xffffff, 0x000000,0)
+ui.addTextArea(91,"<font size='20' color = '#ff0000'><a href='event:P1X'>✘",name,215,125,30,30, 0xffffff, 0x000000,0)
+a = 2
+end 
+if event == "P2join" and a >= 4 then
+P2 = name
+P2J = 1
+ui.addTextArea(3,"<font size='10' color = '#0000ff'><a><p align = 'center'>\n"..P2,nil,440,120,140,40, 0xffffff, 0x000000,1,false,false)
+ui.addTextArea(10,"<font size='100' color = '#3172DE'><a hef='event:play'> </a>",name,200,95,400,80, 0xffffff, 0x000000,0)
+ui.addTextArea(92,"<font size='20' color = '#ff0000'><a href='event:P2X'>✘",admin,560,125,30,30, 0xffffff, 0x000000,0)
+ui.addTextArea(92,"<font size='20' color = '#ff0000'><a href='event:P2X'>✘",name,560,125,30,30, 0xffffff, 0x000000,0)
+a = 2
+end 
+if event == "P1X" and a >= 4 then
+ui.removeTextArea(91)
+ui.addTextArea(2,"<font size='20' color = '#ff0000'><a href='event:P1join'>     Join</a>",nil,220,120,100,30, 0xffffff, 0x000000,1)
+P1 = "Amani#1206"
+a = 2
+end
+if event == "P2X" and a >= 4 then
+ui.removeTextArea(92)
+ui.addTextArea(3,"<font size='20' color = '#0000ff'><a href='event:P2join'>     Join</a>",nil,480,120,100,30, 0xffffff, 0x000000,1)
+P2 = "Amani#1206"
+a = 2
+end
+if event == "GO" then
+ui.removeTextArea(0)
+ui.removeTextArea(1)
+ui.removeTextArea(2)
+ui.removeTextArea(3)
+ui.removeTextArea(4)
+ui.removeTextArea(5)
+ui.removeTextArea(6)
+ui.removeTextArea(7)
+ui.removeTextArea(10)
+ui.removeTextArea(91)
+ui.removeTextArea(92)
+ui.addTextArea(0,"<font size='30' color = '#000000'><a hef='event:play'>:</a>",nil,399,360,100,320, 0xffffff, 0x000000,0)
+roundon = 1
+end 
+end
+function eventMouse(name, xMousePosition, yMousePosition)
+if P1 == name then
+box1 = yMousePosition
+tfm.exec.addPhysicObject(1,8,box1-23,{
+type=12,
+restitution=1.2,
+friction=0,
+angle=-2,
+width=20,
+height=50,
+color = 0xFF0000,
+groundCollision=true
+})
+tfm.exec.addPhysicObject(2,8,box1+23,{
+type=12,
+restitution=1.2,
+friction=0,
+angle=2,
+width=20,
+height=50,
+color = 0xFF0000,
+groundCollision=true
+})
+end 
+if P2 == name then
+box2 = yMousePosition
+tfm.exec.addPhysicObject(3,792,box2-23,{
+type=12,
+restitution=1.2,
+friction=0,
+angle=2,
+width=20,
+height=50,
+color = 0x0000ff,
+groundCollision=true
+})
+tfm.exec.addPhysicObject(4,792,box2+23,{
+type=12,
+restitution=1.2,
+friction=0,
+angle=-2,
+width=20,
+height=50,
+color = 0x0000ff,
+groundCollision=true
+})
+end 
+end
