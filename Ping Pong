@@ -1,7 +1,7 @@
 -- Ping Pong By WIZ --
 -- (for Tribe)   <--
 -- room admin --
-admin = "C4sper#4636"
+admin = "Wizardamani0#6277"
 -- room admin --
 
 -- Max goals to win --
@@ -43,7 +43,7 @@ P2GOAL = 0
 local P1 = "Amani#1206"
 local P2 = "Amani#1206"
  
-ui.addTextArea(6,"<font size='14' color = '#000000'><a><p align = 'center'> في لعبة بينغ بونغ عليك اولا ان تضغط زر الدخول\nثم عليك صد الكرة عند محاولتها دخول الجدار الخاص بك\n عليك الضغط في الشاشة لتحريك المستطيل الخاص بك لصد الكرة\n من يحصل على 3 نقاط هو الفائز</a>",nil,205,180,390,80, 0xffffff, 0x000000,1)
+ui.addTextArea(6,"<font size='14' color = '#000000'><a><p align = 'center'>After joining the admin will press *Start* and you'll be playing , click in the screen with the mouse to place your paddle , don't let the ball enter your side.</a>",nil,205,180,390,80, 0xffffff, 0x000000,1)
 ui.addTextArea(0,"<font size='100' color = '#3172DE'><a hef='event:play'> </a>",nil,200,95,400,80, 0xffffff, 0x000000,1)
 ui.addTextArea(1,"<font size='30' color = '#000000'><a hef='event:play'>VS</a>",nil,380,115,200,320, 0xffffff, 0x000000,0)
 ui.addTextArea(2,"<font size='20' color = '#ff0000'><a href='event:P1join'>     Join</a>",nil,220,120,100,30, 0xffffff, 0x000000,1)
@@ -92,11 +92,11 @@ ui.addTextArea(10,"<font size='100' color = '#3172DE'><a hef='event:play'> </a>"
 end 
  
 if P2GOAL == G then
-ui.addTextArea(99,"<font size='50' color = '#0000ff'><a><p align = 'center'>\n\nلقد فاز\n"..P2,nil,-10,-10,820,420, 0xffffff, 0x000000,0.5,true,false)
+ui.addTextArea(99,"<font size='50' color = '#0000ff'><a><p align = 'center'>\n\nThe winner is\n"..P2,nil,-10,-10,820,420, 0xffffff, 0x000000,0.5,true,false)
 roundrun = 0
 end 
 if P1GOAL == G then
-ui.addTextArea(99,"<font size='50' color = '#ff0000'><a><p align = 'center'>\n\nلقد فاز\n"..P1,nil,-10,-10,820,420, 0xffffff, 0x000000,0.5,true,false)
+ui.addTextArea(99,"<font size='50' color = '#ff0000'><a><p align = 'center'>\n\nThe winner is\n"..P1,nil,-10,-10,820,420, 0xffffff, 0x000000,0.5,true,false)
 roundrun = 0
 end 
  
