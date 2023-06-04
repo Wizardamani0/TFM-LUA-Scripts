@@ -128,8 +128,8 @@ tfm.exec.setWorldGravity(0, 10)
 if BHP > 10 then
 BHP = 10
 end
-if BHP < 5 then
-BHP = 5
+if BHP < 6 then
+BHP = 6
 end
 
     for name in next, tfm.get.room.playerList do
