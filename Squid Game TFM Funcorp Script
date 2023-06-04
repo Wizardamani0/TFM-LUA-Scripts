@@ -14,7 +14,7 @@ Admins = {"Wizardamani0#6277","Amani#1206"}
 --  !message
 --  !admins
 --  !commands
---  !NPC
+--  !npc
 --
 -- RealAdmin Chat Commands --
 --
@@ -25,7 +25,7 @@ Admins = {"Wizardamani0#6277","Amani#1206"}
 --  !message
 --  !admins
 --  !commands
---  !NPC
+--  !npc
 --
 ----------------------------
 
@@ -1176,7 +1176,7 @@ system.disableChatCommandDisplay("message",true)
 system.disableChatCommandDisplay("revive",true)
 system.disableChatCommandDisplay("admin",true)
 system.disableChatCommandDisplay("unadmin",true)
-system.disableChatCommandDisplay("NPC",true)
+system.disableChatCommandDisplay("npc",true)
 function eventChatCommand(CCname, mes)--o
 if mes == "admins" then
 for p in next, Admins do
@@ -1211,7 +1211,7 @@ end
    print("<g>!admin PlayerName#0000\n!revive PlayerName#0000\n!message\n!admins\n!commands\n!NPC")
    tfm.exec.chatMessage("<g>!admin PlayerName#0000\n!revive PlayerName#0000\n!message\n!admins\n!commands\n!NPC")
    end
-   if cmd[1] == "NPC" and not(MAP == 5) then
+   if cmd[1] == "npc" and not(MAP == 5) then
    tfm.exec.addNPC(CCname, { title = (tfm.get.room.playerList[CCname].title), x = (tfm.get.room.playerList[CCname].x), y = (tfm.get.room.playerList[CCname].y), look = (tfm.get.room.playerList[CCname].look), female = (tfm.get.room.playerList[CCname].gender), lookAtPlayer = true})
    end
    if cmd[1] == "message" then
