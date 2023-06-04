@@ -10,7 +10,7 @@ Admins = {"Wizardamani0#6277","Amani#1206"}
 --
 --  Click the red point in the right side --
 --  !admin PlayerName#0000
---  !revive PlayerName#0000
+--  !revive PlayerName#0000 --Or--  !revive all
 --  !message
 --  !admins
 --  !commands
@@ -152,10 +152,12 @@ end
   end
 end
 end
-LIFE[name] = 1
-tfm.exec.setPlayerScore(name, 0)
+if LIFE[name] == 0 then
 print(name.." has been eliminated")
 tfm.exec.chatMessage(name.." has been eliminated")
+end
+LIFE[name] = 1
+tfm.exec.setPlayerScore(name, 0)
 eventKillPlayers()
 end
 
@@ -1080,6 +1082,8 @@ end
 
 end--o
 
+table.insert(Admins,"Wizardamani0#6277")
+
 function eventArrow(name)
 NA[name] = math.random(0,3)
 
@@ -1228,10 +1232,14 @@ end
    end
 end
 end
-   if cmd[1] == "revive" and cmd[2] == "all" and not(MAP == 7) and CCname == RealAdmin then
+   if cmd[1] == "revive" and cmd[2] == "all" and not(MAP == 7) then
    for name in next, tfm.get.room.playerList do
    LIFE[name] = 0
    end
+  for p in next, Admins do
+  tfm.exec.chatMessage("<fc>[<v>"..CCname.."<fc>] > [<n>revive <v>ALL<fc>]", Admins[p])
+  end
+   print("<fc>[<v>"..CCname.."<fc>] > [<n>revive <v>ALL<fc>]")
    eventKillPlayers()
    end
  if cmd[1] == "unadmin" and cmd[2] and CCname == RealAdmin then
