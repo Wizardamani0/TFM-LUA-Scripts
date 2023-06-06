@@ -2,16 +2,16 @@
 
 RealAdmin = "Wizardamani0#6277"    -- Global Admin
 
--->Please add you NAME#000 in 'Admins' Table to be an admin.<--
+-->Please add you Name#0000 in 'Admins' Table to be an admin.<--
 
-Admins = {"Wizardamani0#6277","Amani#1206"}
+Admins = {"Wizardamani0#6277","Noooooooorr#0000"}
 
 -- Admins Chat Commands --
 --
 --  Click the red point in the right side --
 --  !admin PlayerName#0000
 --  !revive PlayerName#0000 --Or--  !revive all
---  !message
+--  !message --Or-- !m
 --  !admins
 --  !commands
 --  !npc
@@ -22,26 +22,77 @@ Admins = {"Wizardamani0#6277","Amani#1206"}
 --  !unadmin PlayerName#0000
 --  !admin PlayerName#0000
 --  !revive PlayerName#0000 --Or--  !revive all
---  !message
+--  !message --Or-- !m
 --  !admins
 --  !commands
 --  !npc
 --
 ----------------------------
 
-
-
-
-
-
-
-
-
-
-
 RoomAdminMessage = "Good Luck Everybody, ENJOY :D"
 RoomMessage = "\n<v>•Welcome to <fc>•Squid-Game-TFM•<v> For Funcorp•\n<v>•Please open the help list from <rose>?<v>•\n"
-print(RoomMessage)
+LangH = "\n<v>Want to change the language?\n<g>Use the commands:\n!en\n!ar"
+
+local translations = {
+    ar = {
+        help = "مساعدة",
+        credits = "الائتمانات",
+        howToPlay = "طريقة اللعب",
+        note1 = "<p align='right'> ستلعب 6 ألعاب لتكون الفائز وآخر ناجٍ من بين جميع الفئران",
+        note2 = "<p align='right'> عليك النجاة بالجولات الستة للفوز\nإن مت في أحد الجولات فلا يمكن أن تستعيد حياتك في المراحل القادمة، لكنك ستعيش لو فاز أحد و أنتهت الجولة، أو إذا أراد مدير الغرفة إنعاشك",
+        adminNote = "رسالة من مدير الغرفة",
+        game1 = "<font size='12' color = '#ffffff'><p align='right'><n> ضوء أحمر / ضوء أخضر  اركض عندما ترى الضوء الأخضر، توقف عندما ترى الضوء الأحمر <j>:1-اللعبة",
+        game2 = "<font size='12' color = '#ffffff'><p align='right'><n> دالغونا/البسكوت   حرك ابرتك دون لمس حواف البسكوتة<j>:2-اللعبة",
+        game3 = "<font size='12' color = '#ffffff'><p align='right'><n> اضغط على الزر الصحيح في لوحة مفاتيحك بحسب ما يشير إليه السهم الوردي<j>:3-اللعبة",
+        game4 = "<font size='12' color = '#ffffff'><p align='right'><n> انقر في أي مكان على الشاشة لتحريك كرتك ،حاول دخول الجحر بالكرة الخاصة بك للفوز<j>:4-اللعبة",
+        game5 = "<font size='12' color = '#ffffff'><p align='right'><n> (البلاط الزجاج) حاول الوصول إلى الجانب الأيمن من الخريطة و ذلك حسب حظك<j>:5-اللعبة",
+        game6 = "<font size='12' color = '#ffffff'><p align='right'><n> (اللعبة الأخيرة) لا تسقط<j>:6-اللعبة",
+        developedBy = "تمت برمجة السكربت من قبل:",
+        thankYou = "شكرا لكم",
+        specialThanks = "شكر خاص لأصدقائي:", 
+        eliminated = "تم إقصاء اللاعب"
+
+    },
+    en = {
+        help = "HELP",
+        credits = "Credits",
+        howToPlay = "How To Play",
+        note1 = "you're gonna be playing 6 games to be the winner and the last survivor of all mice.",
+        note2 = "you have to survive all the 6 games to win.\nif you die in one of the games you will not revive in next rounds but everyone will be revived if someone win the games, or if the admins want to.",
+        adminNote = "Admin Note",
+        game1 = "<font size='12' color = '#ffffff'><j>Game-1:<n> *GreenLight/RedLight* Go after you see the green light,Stop after you see the red light.",
+        game2 = "<font size='12' color = '#ffffff'><j>Game-2:<n> *Dalgona* Move your needle and do not touch the corners.",
+        game3 = "<font size='12' color = '#ffffff'><j>Game-3:<n> *Tug-Of-War* Press the correct button in your keyboard in the direction indicated by the pink arrow.",
+        game4 = "<font size='12' color = '#ffffff'><j>Game-4:<n> *Marbles* click anywhere at the screen to move your marble,try to get your marble to the hole to win.",
+        game5 = "<font size='12' color = '#ffffff'><j>Game-5:<n> *The Glass Tile* It's all about your luck, try to get to the right side of the map.",
+        game6 = "<font size='12' color = '#ffffff'><j>Game-6:<n> *The Last Game* Don't fall off.",
+        developedBy = "This Script has been developed by",
+        thankYou = "Thank you",
+        specialThanks = "Special thanks to my friends:", 
+        eliminated = "has been eliminated",
+    }
+}
+
+TR = {}
+
+function translate(id, name)
+    if TR[name] then
+        if translations[TR[name]] then
+            if translations[TR[name]][id] then
+                return translations[TR[name]][id]
+            else
+                return translations["en"][id]
+            end
+        elseif translations["en"] then
+            return translations["en"][id]
+        else
+            return "error"
+        end
+    end
+end
+
+print(RoomMessage..LangH)
+
 function eventResetVariables()
 --
 MAP = 0
@@ -116,7 +167,8 @@ RTeam = {}
 BTeam = {}
 
 function eventNewPlayer(name)
-tfm.exec.chatMessage(RoomMessage,name)
+TR[name] = tfm.get.room.playerList[name].language
+tfm.exec.chatMessage(RoomMessage..LangH,name)
 ui.addTextArea(3000,"<font size='28' color = '#00ffff'><a href='event:HL'><b><rose> ?</b></a>",name,-5,20,40,40, 0xffffff, 0x000000,0,true)
 ui.addTextArea(-3,"<font size='20' color = '#ff0000'><a href='event:AL'>•</a>","Wizardamani0#6277",785,15,20,25, 0xffffff, 0x000000,0,true)
 for p in next, Admins do
@@ -143,7 +195,7 @@ if ((tfm.get.room.playerList[name].isDead) == false) then
 AliveMice = AliveMice + 1
 end
   end
-if AliveMice == 1 then
+if AliveMice == 1 and G7RT >= 5 then
   for name in next, tfm.get.room.playerList do
 if ((tfm.get.room.playerList[name].isDead) == false) then
 Winner = name
@@ -152,12 +204,14 @@ end
   end
 end
 end
+tfm.exec.setPlayerScore(name, 0)
 if LIFE[name] == 0 then
-print(name.." has been eliminated")
-tfm.exec.chatMessage(name.." has been eliminated")
+for n in next, tfm.get.room.playerList do
+print(name.." "..translate("eliminated", n))
+    tfm.exec.chatMessage(name.." "..translate("eliminated", n), n)
+end
 end
 LIFE[name] = 1
-tfm.exec.setPlayerScore(name, 0)
 eventKillPlayers()
 end
 
@@ -183,6 +237,9 @@ for p in next, Admins do
 ui.addTextArea(-3,"<font size='20' color = '#ff0000'><a href='event:AL'>•</a>",Admins[p],785,15,20,25, 0xffffff, 0x000000,0,true)
 end
 eventKillPlayers()
+if MAP == -1 then
+tfm.exec.movePlayer(Winner,400,200)
+end
 end
 
 function eventClearUI()--@ECUI
@@ -253,12 +310,12 @@ end
 end
 
 function eventWinnerMap()
+MAP = -1
 tfm.exec.newGame([[@7931537]])
 tfm.exec.setGameTime(13)
 tfm.exec.setUIMapName(MN.." <j>The Winner is <rose>"..Winner)
 tfm.exec.movePlayer(Winner,400,200)
 ui.removeTextArea(0)
-MAP = -1
 end
 
 function eventTextAreaCallback(id, name, event)
@@ -274,18 +331,18 @@ ui.addTextArea(3003,"<font size='20' color = '#ffffff'><p align = 'center'>",nam
 
 ui.addTextArea(3004,"<font size='20' color = '#ffffff'><p align = 'center'>",name,194,79,100,30, 0xffffff, 0xffffff,1, true)
 ui.addTextArea(3005,"<font size='20' color = '#ffffff'><p align = 'center'>",name,196,81,100,30, 0x000001, 0x000001,1, true)
-ui.addTextArea(3006,"<font size='20' color = '#ffffff'><p align = 'center'><j>HELP",name,195,80,100,30, 0x324650, 0x324650,1, true)
+ui.addTextArea(3006,"<font size='20' color = '#ffffff'><p align = 'center'><j>".. translate("help", name),name,195,80,100,30, 0x324650, 0x324650,1, true)
 ui.addTextArea(3007,"<font size='20' color = '#ffffff'><p align = 'center'>",name,502,77,100,30, 0xffffff, 0xffffff,1, true)
 ui.addTextArea(3008,"<font size='20' color = '#ffffff'><p align = 'center'>",name,506,81,100,30, 0x000001, 0x000001,1, true)
-ui.addTextArea(3009,"<font size='20' color = '#ffffff'><a href='event:HL3'><p align = 'center'><A:ACTIVE>Credits",name,503,78,100,30, 0x324650, 0x324650,1, true)
+ui.addTextArea(3009,"<font size='20' color = '#ffffff'><a href='event:HL3'><p align = 'center'><A:ACTIVE>".. translate("credits", name),name,503,78,100,30, 0x324650, 0x324650,1, true)
 ui.addTextArea(3010,"<font size='20' color = '#ffffff'><p align = 'center'>",name,327,77,140,30, 0xffffff, 0xffffff,1, true)
 ui.addTextArea(3011,"<font size='20' color = '#ffffff'><p align = 'center'>",name,331,81,140,30, 0x000001, 0x000001,1, true)
-ui.addTextArea(3012,"<font size='20' color = '#ffffff'><a href='event:HL2'><p align = 'center'><A:ACTIVE>How To Play",name,328,78,140,30, 0x324650, 0x324650,1, true)
+ui.addTextArea(3012,"<font size='20' color = '#ffffff'><a href='event:HL2'><p align = 'center'><A:ACTIVE>".. translate("howToPlay", name),name,328,78,140,30, 0x324650, 0x324650,1, true)
 
-ui.addTextArea(3020,"<font size='20' color = '#ffffff'><p align = 'center'><A:ACTIVE>• HELP •",name,160,140,480,210, 0x40687C, 0x2F5162,1, true)
-ui.addTextArea(3021,"<font size='12' color = '#ffffff'><j>you're gonna be playing 6 games to be the winner and the last survivor of all mice.",name,160,170,480,60, 0x40687C, 0x2F5162,0, true)
-ui.addTextArea(3022,"<font size='12' color = '#ffffff'><j>you have to survive all the 6 games to win.\nif you die in one of the games you will not revive in next rounds but everyone will be revived if someone win the games,or if the admins want to.",name,160,200,480,60, 0x40687C, 0x2F5162,0, true)
-ui.addTextArea(3023,"<font size='18' color = '#ffffff'><p align = 'center'><A:ACTIVE>• Admin Note •",name,160,250,480,50, 0x40687C, 0x2F5162,0, true)
+ui.addTextArea(3020,"<font size='20' color = '#ffffff'><p align = 'center'><A:ACTIVE>• ".. translate("help", name) .." •",name,160,140,480,210, 0x40687C, 0x2F5162,1, true)
+ui.addTextArea(3021,"<font size='12' color = '#ffffff'><j>".. translate("note1", name) ,name,160,170,480,60, 0x40687C, 0x2F5162,0, true)
+ui.addTextArea(3022,"<font size='12' color = '#ffffff'><j>".. translate("note2", name) ,name,160,200,480,60, 0x40687C, 0x2F5162,0, true)
+ui.addTextArea(3023,"<font size='18' color = '#ffffff'><p align = 'center'><A:ACTIVE>• "..translate("adminNote", name).." •",name,160,250,480,50, 0x40687C, 0x2F5162,0, true)
 ui.addTextArea(3024,"<font size='12' color = '#ffffff'><p align = 'center'><n>"..RoomAdminMessage,name,160,280,480,100, 0x40687C, 0x2F5162,0, true)
 end
 if event=="HL1" then 
@@ -296,19 +353,19 @@ q = q + 1
 end
 ui.addTextArea(3004,"<font size='20' color = '#ffffff'><p align = 'center'>",name,194,79,100,30, 0xffffff, 0xffffff,1, true)
 ui.addTextArea(3005,"<font size='20' color = '#ffffff'><p align = 'center'>",name,196,81,100,30, 0x000001, 0x000001,1, true)
-ui.addTextArea(3006,"<font size='20' color = '#ffffff'><p align = 'center'><j>HELP",name,195,80,100,30, 0x324650, 0x324650,1, true)
+ui.addTextArea(3006,"<font size='20' color = '#ffffff'><p align = 'center'><j>".. translate("help", name) ,name,195,80,100,30, 0x324650, 0x324650,1, true)
 ui.addTextArea(3007,"<font size='20' color = '#ffffff'><p align = 'center'>",name,502,77,100,30, 0xffffff, 0xffffff,1, true)
 ui.addTextArea(3008,"<font size='20' color = '#ffffff'><p align = 'center'>",name,506,81,100,30, 0x000001, 0x000001,1, true)
-ui.addTextArea(3009,"<font size='20' color = '#ffffff'><a href='event:HL3'><p align = 'center'><A:ACTIVE>Credits",name,503,78,100,30, 0x324650, 0x324650,1, true)
+ui.addTextArea(3009,"<font size='20' color = '#ffffff'><a href='event:HL3'><p align = 'center'><A:ACTIVE>"..translate("credits", name),name,503,78,100,30, 0x324650, 0x324650,1, true)
 ui.addTextArea(3010,"<font size='20' color = '#ffffff'><p align = 'center'>",name,327,77,140,30, 0xffffff, 0xffffff,1, true)
 ui.addTextArea(3011,"<font size='20' color = '#ffffff'><p align = 'center'>",name,331,81,140,30, 0x000001, 0x000001,1, true)
-ui.addTextArea(3012,"<font size='20' color = '#ffffff'><a href='event:HL2'><p align = 'center'><A:ACTIVE>How To Play",name,328,78,140,30, 0x324650, 0x324650,1, true)
+ui.addTextArea(3012,"<font size='20' color = '#ffffff'><a href='event:HL2'><p align = 'center'><A:ACTIVE>".. translate("howToPlay", name),name,328,78,140,30, 0x324650, 0x324650,1, true)
 
-ui.addTextArea(3020,"<font size='20' color = '#ffffff'><p align = 'center'><A:ACTIVE>• HELP •",name,160,140,480,210, 0x40687C, 0x2F5162,1, true)
-ui.addTextArea(3021,"<font size='12' color = '#ffffff'><j>you're gonna be playing 6 games to be the winner and the last survivor of all mice.",name,160,170,480,60, 0x40687C, 0x2F5162,0, true)
-ui.addTextArea(3022,"<font size='12' color = '#ffffff'><j>you have to survive all the 6 games to win.\nif you die in one of the games you will not revive in next rounds but everyone will be revived if someone win the games,or if the admins want to.",name,160,200,480,60, 0x40687C, 0x2F5162,0, true)
-ui.addTextArea(3023,"<font size='18' color = '#ffffff'><p align = 'center'><A:ACTIVE>• Admin Note •",name,160,250,480,50, 0x40687C, 0x2F5162,0, true)
-ui.addTextArea(3024,"<font size='12' color = '#ffffff'><p align = 'center'><n>"..RoomAdminMessage,name,160,280,480,100, 0x40687C, 0x2F5162,0, true)
+ui.addTextArea(3020,"<font size='20' color = '#ffffff'><p align = 'center'><A:ACTIVE>• "..translate("help", name).." •",name,160,140,480,210, 0x40687C, 0x2F5162,1, true)
+ui.addTextArea(3021,"<font size='12' color = '#ffffff'><j>".. translate("note1", name) ,name,160,170,480,60, 0x40687C, 0x2F5162,0, true)
+ui.addTextArea(3022,"<font size='12' color = '#ffffff'><j>".. translate("note2", name),name,160,200,480,60, 0x40687C, 0x2F5162,0, true)
+ui.addTextArea(3023,"<font size='18' color = '#ffffff'><p align = 'center'><A:ACTIVE>• "..translate("adminNote", name).." •",name,160,250,480,50, 0x40687C, 0x2F5162,0, true)
+ui.addTextArea(3024,"<font size='12' color = '#ffffff'><p align = 'center'><n>"..RoomAdminMessage ,name,160,280,480,100, 0x40687C, 0x2F5162,0, true)
 end
 if event=="HL2" then 
 q = 3020
@@ -318,21 +375,21 @@ q = q + 1
 end
 ui.addTextArea(3004,"<font size='20' color = '#ffffff'><p align = 'center'>",name,194,77,100,30, 0xffffff, 0xffffff,1, true)
 ui.addTextArea(3005,"<font size='20' color = '#ffffff'><p align = 'center'>",name,196,81,100,30, 0x000001, 0x000001,1, true)
-ui.addTextArea(3006,"<font size='20' color = '#ffffff'><a href='event:HL1'><p align = 'center'><A:ACTIVE>HELP",name,195,78,100,30, 0x324650, 0x324650,1, true)
+ui.addTextArea(3006,"<font size='20' color = '#ffffff'><a href='event:HL1'><p align = 'center'><A:ACTIVE>"..translate("help", name),name,195,78,100,30, 0x324650, 0x324650,1, true)
 ui.addTextArea(3007,"<font size='20' color = '#ffffff'><p align = 'center'>",name,502,77,100,30, 0xffffff, 0xffffff,1, true)
 ui.addTextArea(3008,"<font size='20' color = '#ffffff'><p align = 'center'>",name,506,81,100,30, 0x000001, 0x000001,1, true)
-ui.addTextArea(3009,"<font size='20' color = '#ffffff'><a href='event:HL3'><p align = 'center'><A:ACTIVE>Credits",name,503,78,100,30, 0x324650, 0x324650,1, true)
+ui.addTextArea(3009,"<font size='20' color = '#ffffff'><a href='event:HL3'><p align = 'center'><A:ACTIVE>"..translate("credits", name),name,503,78,100,30, 0x324650, 0x324650,1, true)
 ui.addTextArea(3010,"<font size='20' color = '#ffffff'><p align = 'center'>",name,329,79,140,30, 0xffffff, 0xffffff,1, true)
 ui.addTextArea(3011,"<font size='20' color = '#ffffff'><p align = 'center'>",name,331,81,140,30, 0x000001, 0x000001,1, true)
-ui.addTextArea(3012,"<font size='20' color = '#ffffff'><a href='event:HL2'><p align = 'center'><j>How To Play",name,330,80,140,30, 0x324650, 0x324650,1, true)
+ui.addTextArea(3012,"<font size='20' color = '#ffffff'><a href='event:HL2'><p align = 'center'><j>" .. translate("howToPlay", name),name,330,80,140,30, 0x324650, 0x324650,1, true)
 
-ui.addTextArea(3020,"<font size='20' color = '#ffffff'><p align = 'center'><A:ACTIVE>• How To Play •",name,160,140,480,210, 0x40687C, 0x2F5162,1, true)
-ui.addTextArea(3021,"<font size='12' color = '#ffffff'><j>Game-1:<n> *GreenLight/RedLight* Go after you see the green light,Stop after you see the red light.",name,160,170,480,60, 0x40687C, 0x2F5162,0, true)
-ui.addTextArea(3022,"<font size='12' color = '#ffffff'><j>Game-2:<n> *Dalgona* Move your needle and do not touch the corners.",name,160,200,480,60, 0x40687C, 0x2F5162,0, true)
-ui.addTextArea(3023,"<font size='12' color = '#ffffff'><j>Game-3:<n> *Tug-Of-War* Press the correct button in your keyboard in the direction indicated by the pink arrow.",name,160,215,480,60, 0x40687C, 0x2F5162,0, true)
-ui.addTextArea(3024,"<font size='12' color = '#ffffff'><j>Game-4:<n> *Marbles* click anywhere at the screen to move your marble,try to get your marble to the hole to win.",name,160,245,480,60, 0x40687C, 0x2F5162,0, true)
-ui.addTextArea(3025,"<font size='12' color = '#ffffff'><j>Game-5:<n> *The Glass Tile* It's all about your luck, try to get to the right side of the map.",name,160,275,480,60, 0x40687C, 0x2F5162,0, true)
-ui.addTextArea(3026,"<font size='12' color = '#ffffff'><j>Game-6:<n> *The Last Game* Don't fall off.",name,160,305,480,60, 0x40687C, 0x2F5162,0, true)
+ui.addTextArea(3020,"<font size='20' color = '#ffffff'><p align = 'center'><A:ACTIVE>• "..translate("howToPlay", name).." •",name,160,140,480,210, 0x40687C, 0x2F5162,1, true)
+ui.addTextArea(3021, translate("game1", name), name,160,170,480,60, 0x40687C, 0x2F5162,0, true)
+ui.addTextArea(3022, translate("game2", name), name,160,200,480,60, 0x40687C, 0x2F5162,0, true)
+ui.addTextArea(3023, translate("game3", name), name,160,215,480,60, 0x40687C, 0x2F5162,0, true)
+ui.addTextArea(3024, translate("game4", name), name,160,245,480,60, 0x40687C, 0x2F5162,0, true)
+ui.addTextArea(3025, translate("game5", name), name,160,275,480,60, 0x40687C, 0x2F5162,0, true)
+ui.addTextArea(3026, translate("game6", name), name,160,305,480,60, 0x40687C, 0x2F5162,0, true)
 end
 if event=="HL3" then 
 q = 3020
@@ -342,18 +399,18 @@ q = q + 1
 end
 ui.addTextArea(3004,"<font size='20' color = '#ffffff'><p align = 'center'>",name,194,77,100,30, 0xffffff, 0xffffff,1, true)
 ui.addTextArea(3005,"<font size='20' color = '#ffffff'><p align = 'center'>",name,196,81,100,30, 0x000001, 0x000001,1, true)
-ui.addTextArea(3006,"<font size='20' color = '#ffffff'><a href='event:HL1'><p align = 'center'><A:ACTIVE>HELP",name,195,78,100,30, 0x324650, 0x324650,1, true)
+ui.addTextArea(3006,"<font size='20' color = '#ffffff'><a href='event:HL1'><p align = 'center'><A:ACTIVE>"..translate("help", name),name,195,78,100,30, 0x324650, 0x324650,1, true)
 ui.addTextArea(3007,"<font size='20' color = '#ffffff'><p align = 'center'>",name,504,79,100,30, 0xffffff, 0xffffff,1, true)
 ui.addTextArea(3008,"<font size='20' color = '#ffffff'><p align = 'center'>",name,506,81,100,30, 0x000001, 0x000001,1, true)
-ui.addTextArea(3009,"<font size='20' color = '#ffffff'><a href='event:HL3'><p align = 'center'><j>Credits",name,505,80,100,30, 0x324650, 0x324650,1, true)
+ui.addTextArea(3009,"<font size='20' color = '#ffffff'><a href='event:HL3'><p align = 'center'><j>"..translate("credits", name),name,505,80,100,30, 0x324650, 0x324650,1, true)
 ui.addTextArea(3010,"<font size='20' color = '#ffffff'><p align = 'center'>",name,327,77,140,30, 0xffffff, 0xffffff,1, true)
 ui.addTextArea(3011,"<font size='20' color = '#ffffff'><p align = 'center'>",name,331,81,140,30, 0x000001, 0x000001,1, true)
-ui.addTextArea(3012,"<font size='20' color = '#ffffff'><a href='event:HL2'><p align = 'center'><A:ACTIVE>How To Play",name,328,78,140,30, 0x324650, 0x324650,1, true)
+ui.addTextArea(3012,"<font size='20' color = '#ffffff'><a href='event:HL2'><p align = 'center'><A:ACTIVE>" .. translate("howToPlay", name),name,328,78,140,30, 0x324650, 0x324650,1, true)
 
-ui.addTextArea(3020,"<font size='20' color = '#ffffff'><p align = 'center'><A:ACTIVE>• Credits •",name,160,140,480,210, 0x40687C, 0x2F5162,1, true)
-ui.addTextArea(3021,"<font size='12' color = '#ffffff'><p align = 'center'><n>This Script has been developed by <v>Wizardamani0#6277",name,160,170,480,60, 0x40687C, 0x2F5162,0, true)
-ui.addTextArea(3022,"<font size='18' color = '#ffffff'><p align = 'center'><A:ACTIVE>• Thank you •",name,160,200,480,50, 0x40687C, 0x2F5162,0, true)
-ui.addTextArea(3023,"<font size='12' color = '#ffffff'><p align = 'center'><n>Special thanks to my friends:\n<v>Noooooooorr#0000 , Nnaaaz#0000 , Hufdasr#0000 , Indexinel#5948 , C4sper#4636 , Maos#0420",name,160,230,480,100, 0x40687C, 0x2F5162,0, true)
+ui.addTextArea(3020,"<font size='20' color = '#ffffff'><p align = 'center'><A:ACTIVE>• ".. translate("credits", name) .." •",name,160,140,480,210, 0x40687C, 0x2F5162,1, true)
+ui.addTextArea(3021,"<font size='12' color = '#ffffff'><p align = 'center'><n>"..translate("developedBy", name).." <v>Wizardamani0#6277",name,160,170,480,60, 0x40687C, 0x2F5162,0, true)
+ui.addTextArea(3022,"<font size='18' color = '#ffffff'><p align = 'center'><A:ACTIVE>• "..translate("thankYou", name).." •",name,160,200,480,50, 0x40687C, 0x2F5162,0, true)
+ui.addTextArea(3023,"<font size='12' color = '#ffffff'><p align = 'center'><n>"..translate("specialThanks", name).."\n<v>Noooooooorr#0000 , Nnaaaz#0000 , Hufdasr#0000 , Indexinel#5948 , C4sper#4636 , Maos#0420",name,160,230,480,100, 0x40687C, 0x2F5162,0, true)
 end
 if event=="CHL" then 
 q = 2500
@@ -830,7 +887,7 @@ G3RT = G3RT - 1
 G3T = 0
 end
 if G3RT >= 0 then
-ui.addTextArea(0,"<font size='20' color = '#ffffff'><p align = 'center'>"..(G3RT).."",name,370,18,60,25, 0x000001, 0x000001,1, true)
+ui.addTextArea(0,"<font size='20' color = '#ffffff'><p align = 'center'>"..(G3RT).."", name, 370,18,60,25, 0x000001, 0x000001,1, true)
 end
 if G3RT <= 1 then
 for name in next, tfm.get.room.playerList do
@@ -996,6 +1053,9 @@ tfm.exec.setGameTime(G7RT + 2)
 if G7RT <= 5 and  G7RT > 1 then
 eventKillPlayers()
 tfm.exec.setGameTime(0)
+end
+if G7RT == 6 then
+eventPlayerDied("WIZ")
 end
 if G7RT == 140 then
 for name in next, tfm.get.room.playerList do
@@ -1169,14 +1229,11 @@ tfm.exec.movePlayer(name, 671, 128,false)
 end
 end
 end--o
-system.disableChatCommandDisplay("commands",true)
-system.disableChatCommandDisplay("admins",true)
-system.disableChatCommandDisplay("CRM",true)
-system.disableChatCommandDisplay("message",true)
-system.disableChatCommandDisplay("revive",true)
-system.disableChatCommandDisplay("admin",true)
-system.disableChatCommandDisplay("unadmin",true)
-system.disableChatCommandDisplay("npc",true)
+
+for _,cmd in next,{"ar","en","es","fr","br","commands", "admins", "CRM", "message", "m", "revive","admin", "unadmin", "npc"} do
+    system.disableChatCommandDisplay(cmd,true)
+end
+
 function eventChatCommand(CCname, mes)--o
 if mes == "admins" then
 for p in next, Admins do
@@ -1207,6 +1264,21 @@ end
    end
 end
 end
+   if cmd[1] == "ar" then
+   TR[CCname] = "ar"
+   end
+   if cmd[1] == "en" then
+   TR[CCname] = "en"
+   end
+   if cmd[1] == "es" then
+   TR[CCname] = "es"
+   end
+   if cmd[1] == "fr" then
+   TR[CCname] = "fr"
+   end
+   if cmd[1] == "br" then
+   TR[CCname] = "br"
+   end
    if cmd[1] == "commands" then
    print("<g>!admin PlayerName#0000\n!revive PlayerName#0000\n!message\n!admins\n!commands\n!NPC")
    tfm.exec.chatMessage("<g>!admin PlayerName#0000\n!revive PlayerName#0000\n!message\n!admins\n!commands\n!NPC")
@@ -1215,7 +1287,11 @@ end
    tfm.exec.addNPC(CCname, { title = (tfm.get.room.playerList[CCname].title), x = (tfm.get.room.playerList[CCname].x), y = (tfm.get.room.playerList[CCname].y), look = (tfm.get.room.playerList[CCname].look), female = (tfm.get.room.playerList[CCname].gender), lookAtPlayer = true})
    end
    if cmd[1] == "message" then
-   ui.addPopup(1,2,"              Write the Message.",CCname,5,20,200,true)
+    tfm.exec.chatMessage("<fc>[•] ["..CCname.."] </fc><ch>".. mes:sub(9).."</ch>")
+print("<fc>[•] ["..CCname.."] </fc><ch>".. mes:sub(9).."</ch>")
+   elseif cmd[1] == "m" then
+    tfm.exec.chatMessage("<ch>[•] ["..CCname.."] </ch><n>".. mes:sub(3).."</n>")
+print("<ch>[•] ["..CCname.."] </ch><n>".. mes:sub(3).."</n>")
    end
    if cmd[1] == "CRM" and CCname == RealAdmin then
    ui.addPopup(2,2,"          Write the Room Message.",CCname,5,20,200,true)
